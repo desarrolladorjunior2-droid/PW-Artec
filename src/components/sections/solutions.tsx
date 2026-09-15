@@ -10,7 +10,7 @@ export function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="solutions" className="py-24 md:py-32">
+    <section id="solutions" className="bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
       <div className="container-artec">
         <SectionHeading
           eyebrow="Soluciones"
@@ -31,7 +31,7 @@ export function Solutions() {
                 id={solution.id}
                 onMouseEnter={() => setActiveIndex(i)}
                 onFocus={() => setActiveIndex(i)}
-                className="relative cursor-pointer overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition-[flex-grow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                className="relative cursor-pointer overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-glass-strong)] backdrop-blur-xl transition-[flex-grow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 style={{ flexGrow: isActive ? 5 : 1, flexBasis: 0 }}
               >
                 <div className="flex h-full flex-col justify-between p-7">

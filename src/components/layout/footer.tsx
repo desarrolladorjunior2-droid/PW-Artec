@@ -3,7 +3,7 @@ import { NAV_LINKS, SITE } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--surface)]">
+    <footer className="border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
       <div className="container-artec grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
           <Logo />

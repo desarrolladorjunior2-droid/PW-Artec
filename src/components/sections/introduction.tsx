@@ -4,7 +4,10 @@ import { CircuitVisual } from "@/components/ui/circuit-visual";
 
 export function Introduction() {
   return (
-    <section aria-labelledby="introduction-heading" className="py-24 md:py-32">
+    <section
+      aria-labelledby="introduction-heading"
+      className="bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+    >
       <div className="container-artec grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
         <div id="introduction-heading">
           <SectionHeading

@@ -5,7 +5,7 @@ export function CaseStudy() {
   return (
     <section
       aria-labelledby="case-study-heading"
-      className="border-t border-[var(--border)] bg-[var(--surface)] py-24 md:py-32"
+      className="border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <div className="container-artec">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">

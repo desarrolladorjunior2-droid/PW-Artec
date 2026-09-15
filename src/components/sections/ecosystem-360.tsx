@@ -24,7 +24,10 @@ export function Ecosystem360() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="impact" className="border-t border-[var(--border)] py-24 md:py-32">
+    <section
+      id="impact"
+      className="border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+    >
       <div className="container-artec">
         <SectionHeading
           eyebrow="ARTEC 360°"
@@ -127,7 +130,7 @@ export function Ecosystem360() {
 
           {/* Description panel */}
           <Reveal delay={0.1}>
-            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 md:p-10">
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-glass-strong)] p-8 backdrop-blur-xl md:p-10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id}

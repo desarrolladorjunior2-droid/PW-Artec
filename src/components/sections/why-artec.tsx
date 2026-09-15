@@ -4,7 +4,7 @@ import { WHY_PILLARS } from "@/lib/data";
 
 export function WhyArtec() {
   return (
-    <section className="border-t border-[var(--border)] py-24 md:py-32">
+    <section className="border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
       <div className="container-artec">
         <SectionHeading
           eyebrow="Por qué ARTEC"

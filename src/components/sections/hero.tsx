@@ -32,27 +32,16 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden pt-32 pb-0 md:pt-40"
     >
-      <div
-        aria-hidden="true"
-        className="dot-grid pointer-events-none absolute inset-0 -z-20 opacity-[0.35] [mask-image:radial-gradient(60%_60%_at_75%_10%,black,transparent)]"
-      />
+      {/* Soft vignette so the headline stays legible over the video backdrop
+          while the footage remains visible toward the edges. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 50% at 85% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%)",
+            "radial-gradient(ellipse 65% 60% at 28% 32%, var(--background) 0%, color-mix(in srgb, var(--background) 55%, transparent) 45%, transparent 75%)",
         }}
       />
-      {!prefersReducedMotion ? (
-        <motion.div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-24 top-40 -z-10 h-72 w-72 rounded-full blur-3xl"
-          style={{ background: "color-mix(in srgb, var(--accent) 16%, transparent)" }}
-          animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        />
-      ) : null}
 
       <div className="container-artec grid items-center gap-16 pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 md:pb-28">
         <div>
@@ -111,7 +100,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="glow-card relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
+          className="glow-card relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] bg-[var(--surface-glass)] p-8 backdrop-blur-xl"
           aria-label="Flujo del ecosistema ARTEC"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
@@ -183,7 +172,7 @@ export function Hero() {
 
       <div
         aria-hidden="true"
-        className="relative overflow-hidden border-t border-[var(--border)] py-4"
+        className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-4 backdrop-blur-md"
       >
         <div className={`flex w-max ${prefersReducedMotion ? "" : "animate-marquee"}`}>
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (

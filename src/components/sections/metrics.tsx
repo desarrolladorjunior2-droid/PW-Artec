@@ -12,7 +12,7 @@ export function Metrics() {
     <section
       id="metrics"
       aria-label="Escala operativa de ARTEC"
-      className="relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface)]"
+      className="relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl"
     >
       {!prefersReducedMotion ? (
         <motion.div

@@ -65,7 +65,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="border-t border-[var(--border)] py-24 md:py-32">
+    <section
+      id="contact"
+      className="border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+    >
       <div className="container-artec grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div>
           <SectionHeading
@@ -119,7 +122,7 @@ export function Contact() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+            className="rounded-2xl border border-[var(--border)] bg-[var(--surface-glass-strong)] p-6 backdrop-blur-xl sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <Field

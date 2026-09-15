@@ -34,7 +34,7 @@ export function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[var(--background)]/85 backdrop-blur-md border-b border-[var(--border)]"
+            ? "bg-[var(--nav-glass)] backdrop-blur-md border-b border-[var(--border)]"
             : "bg-transparent"
         }`}
       >
@@ -105,7 +105,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[60] flex flex-col bg-[var(--background)] lg:hidden"
+            className="fixed inset-0 z-[60] flex flex-col bg-[var(--surface-glass-strong)] backdrop-blur-2xl lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Navegación móvil"

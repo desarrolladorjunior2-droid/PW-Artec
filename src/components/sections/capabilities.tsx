@@ -4,7 +4,10 @@ import { CAPABILITIES } from "@/lib/data";
 
 export function Capabilities() {
   return (
-    <section id="capabilities" className="border-t border-[var(--border)] py-24 md:py-32">
+    <section
+      id="capabilities"
+      className="border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+    >
       <div className="container-artec">
         <SectionHeading
           eyebrow="Capacidades"
@@ -13,7 +16,11 @@ export function Capabilities() {
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-3">
           {CAPABILITIES.map((group, i) => (
-            <Reveal key={group.category} delay={i * 0.05} className="bg-[var(--surface)]">
+            <Reveal
+              key={group.category}
+              delay={i * 0.05}
+              className="bg-[var(--surface-glass-strong)] backdrop-blur-xl"
+            >
               <div className="h-full p-8">
                 <h3 className="font-display text-lg font-semibold text-[var(--text-primary)]">
                   {group.category}

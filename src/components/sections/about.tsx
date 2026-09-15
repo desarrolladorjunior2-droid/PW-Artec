@@ -6,7 +6,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="border-t border-[var(--border)] bg-[var(--surface)] py-24 md:py-32"
+      className="border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <div className="container-artec grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
