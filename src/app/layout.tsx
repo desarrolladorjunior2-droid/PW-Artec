@@ -1,0 +1,118 @@
+import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import { SITE } from "@/lib/constants";
+import "./globals.css";
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: "ARTEC S.A.S. | Estrategia Digital, Tecnología y Soluciones Integradas",
+    template: "%s | ARTEC S.A.S.",
+  },
+  description:
+    "ARTEC S.A.S. integra marketing digital, tecnología, contact center, estrategias territoriales y soluciones BTL para conectar marcas y territorios a gran escala.",
+  keywords: [
+    "ARTEC",
+    "marketing digital Colombia",
+    "contact center BPO",
+    "estrategias territoriales",
+    "tecnología web Colombia",
+    "BTL eventos corporativos",
+  ],
+  authors: [{ name: "ARTEC S.A.S." }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "es_CO",
+    url: SITE.url,
+    siteName: "ARTEC S.A.S.",
+    title: "ARTEC S.A.S. | Estrategia Digital, Tecnología y Soluciones Integradas",
+    description:
+      "ARTEC S.A.S. integra marketing digital, tecnología, contact center, estrategias territoriales y soluciones BTL para conectar marcas y territorios a gran escala.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ARTEC S.A.S. | Estrategia Digital, Tecnología y Soluciones Integradas",
+    description:
+      "ARTEC S.A.S. integra marketing digital, tecnología, contact center, estrategias territoriales y soluciones BTL para conectar marcas y territorios a gran escala.",
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#faf9f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0b0a" },
+  ],
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: SITE.url,
+      email: SITE.email,
+      telephone: SITE.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: SITE.address,
+        addressLocality: "Bogotá D.C.",
+        addressCountry: "CO",
+      },
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE.url}/#localbusiness`,
+      name: SITE.name,
+      url: SITE.url,
+      email: SITE.email,
+      telephone: SITE.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: SITE.address,
+        addressLocality: "Bogotá D.C.",
+        addressCountry: "CO",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      publisher: { "@id": `${SITE.url}/#organization` },
+    },
+  ],
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${jakarta.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <ThemeProvider>
+          <a href="#main" className="skip-link">
+            Skip to content
+          </a>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
