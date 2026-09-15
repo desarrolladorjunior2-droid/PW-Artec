@@ -1,19 +1,35 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { MetricCounter } from "@/components/ui/metric-counter";
 import { Reveal } from "@/components/ui/reveal";
 import { METRICS } from "@/lib/data";
 
 export function Metrics() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section
       id="metrics"
       aria-label="Escala operativa de ARTEC"
-      className="border-y border-[var(--border)] bg-[var(--surface)]"
+      className="relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface)]"
     >
+      {!prefersReducedMotion ? (
+        <motion.div
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-transparent via-[var(--accent)]/25 to-transparent"
+          initial={{ x: "-10%" }}
+          whileInView={{ x: "1100%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        />
+      ) : null}
+
       <div className="container-artec grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-4 md:py-20">
         {METRICS.map((metric, i) => (
           <Reveal key={metric.label} delay={i * 0.08}>
             <div className="border-l border-[var(--border)] pl-5">
-              <p className="font-display text-4xl font-semibold tracking-tight text-[var(--text-primary)] md:text-5xl">
+              <p className="font-mono text-4xl font-semibold tracking-tight text-[var(--text-primary)] md:text-5xl">
                 {metric.numeric ? (
                   <MetricCounter
                     numeric={metric.numeric}
@@ -24,7 +40,7 @@ export function Metrics() {
                   metric.value
                 )}
               </p>
-              <p className="mt-2 text-sm leading-snug text-[var(--text-secondary)]">
+              <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--text-secondary)]">
                 {metric.label}
               </p>
             </div>

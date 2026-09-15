@@ -63,7 +63,8 @@
   --color-warning: var(--warning);
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-jakarta);
-  --animate-marquee: marquee 32s linear infinite;
+  --font-mono: var(--font-mono-tech);
+  --animate-marquee: marquee 36s linear infinite;
 }
 
 @layer base {
@@ -137,6 +138,51 @@
   .skip-link:focus {
     top: 1rem;
   }
+
+  .dot-grid {
+    background-image: radial-gradient(
+      color-mix(in srgb, var(--text-primary) 14%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 26px 26px;
+  }
+
+  .glow-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    opacity: 0;
+    background: radial-gradient(
+      220px circle at var(--mx, 50%) var(--my, 50%),
+      color-mix(in srgb, var(--accent) 22%, transparent),
+      transparent 70%
+    );
+    transition: opacity 0.35s ease;
+  }
+
+  .glow-card:hover::before {
+    opacity: 1;
+  }
+
+  .signal-dot {
+    position: relative;
+  }
+
+  .signal-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: currentColor;
+    animation: signal-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
 }
 
 @keyframes marquee {
@@ -145,6 +191,24 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes signal-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  75%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes dash-draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 

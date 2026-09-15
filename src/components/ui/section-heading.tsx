@@ -17,7 +17,14 @@ export function SectionHeading({
   return (
     <div className={align === "center" ? "text-center mx-auto max-w-2xl" : ""}>
       <Reveal>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+        <p
+          className={`flex items-center gap-2.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)] ${
+            align === "center" ? "justify-center" : ""
+          }`}
+        >
+          <span className="relative flex h-1.5 w-1.5 shrink-0">
+            <span className="signal-dot h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+          </span>
           {eyebrow}
         </p>
       </Reveal>

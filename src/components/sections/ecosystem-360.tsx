@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
@@ -19,6 +19,9 @@ const NODE_POSITIONS = ECOSYSTEM_NODES.map((_, i) => {
 export function Ecosystem360() {
   const [activeId, setActiveId] = useState(ECOSYSTEM_NODES[0].id);
   const active = ECOSYSTEM_NODES.find((n) => n.id === activeId)!;
+  const activeIndex = ECOSYSTEM_NODES.findIndex((n) => n.id === activeId);
+  const activePos = NODE_POSITIONS[activeIndex];
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section id="impact" className="border-t border-[var(--border)] py-24 md:py-32">
@@ -37,7 +40,50 @@ export function Ecosystem360() {
               aria-label="Explorador del ecosistema ARTEC 360"
               className="relative mx-auto aspect-square w-full max-w-md"
             >
-              <div className="absolute inset-[18%] rounded-full border border-dashed border-[var(--border)]" />
+              <motion.div
+                aria-hidden="true"
+                className="absolute inset-[18%] rounded-full border border-dashed border-[var(--border)]"
+                animate={prefersReducedMotion ? undefined : { rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              />
+
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 100 100"
+                className="absolute inset-0 h-full w-full"
+              >
+                {NODE_POSITIONS.map((pos, i) => {
+                  const node = ECOSYSTEM_NODES[i];
+                  const isActiveLine =
+                    node.id === activeId || active.connections.includes(node.id);
+                  return (
+                    <line
+                      key={node.id}
+                      x1={50}
+                      y1={50}
+                      x2={pos.left}
+                      y2={pos.top}
+                      stroke={isActiveLine ? "var(--accent)" : "var(--border)"}
+                      strokeWidth={isActiveLine ? 0.5 : 0.3}
+                      style={{ transition: "stroke 0.3s ease" }}
+                    />
+                  );
+                })}
+                {!prefersReducedMotion ? (
+                  <motion.circle
+                    key={activeId}
+                    r={1.4}
+                    fill="var(--accent)"
+                    initial={{ cx: 50, cy: 50, opacity: 0 }}
+                    animate={{
+                      cx: [50, activePos.left],
+                      cy: [50, activePos.top],
+                      opacity: [0, 1, 1, 0],
+                    }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                ) : null}
+              </svg>
 
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-center">

@@ -1,11 +1,11 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
-import { SOLUTIONS } from "@/lib/data";
+import { CircuitVisual } from "@/components/ui/circuit-visual";
 
 export function Introduction() {
   return (
     <section aria-labelledby="introduction-heading" className="py-24 md:py-32">
-      <div className="container-artec">
+      <div className="container-artec grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
         <div id="introduction-heading">
           <SectionHeading
             eyebrow="Qué hacemos"
@@ -14,23 +14,9 @@ export function Introduction() {
           />
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-3 lg:grid-cols-5">
-          {SOLUTIONS.map((solution, i) => (
-            <Reveal key={solution.id} delay={i * 0.06} className="bg-[var(--surface)]">
-              <a
-                href={`#${solution.id}`}
-                className="group flex h-full flex-col justify-between gap-8 p-6 transition-colors hover:bg-[var(--surface-elevated)]"
-              >
-                <span className="text-xs font-semibold text-[var(--text-muted)]">
-                  {solution.index}
-                </span>
-                <span className="text-sm font-medium leading-snug text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
-                  {solution.category}
-                </span>
-              </a>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={0.1}>
+          <CircuitVisual className="mx-auto w-full max-w-lg" />
+        </Reveal>
       </div>
     </section>
   );
