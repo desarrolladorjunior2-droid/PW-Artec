@@ -8,49 +8,49 @@
   --text-secondary: #464e49;
   --text-muted: #868f88;
   --border: #e2e0d7;
-  --accent: #0a8f74;
-  --accent-hover: #076e5a;
-  --accent-foreground: #f5faf8;
+  --accent: #128a4e;
+  --accent-hover: #0e6d3d;
+  --accent-foreground: #f5faf7;
   --success: #2f9e58;
   --warning: #b8791c;
   --shadow-color: 140 10% 10%;
-  --scrim-top: rgba(12, 14, 11, 0.3);
-  --scrim-bottom: rgba(12, 14, 11, 0.46);
+  --scrim-top: rgba(14, 22, 15, 0.26);
+  --scrim-bottom: rgba(14, 22, 15, 0.4);
 }
 
 :root[data-theme="dark"] {
-  --background: #0a0b0a;
-  --surface: #131513;
-  --surface-elevated: #1a1c1a;
-  --text-primary: #f4f5f2;
-  --text-secondary: #aeb3ac;
-  --text-muted: #6c716b;
-  --border: #26281f;
-  --accent: #3fe0b8;
-  --accent-hover: #6bebc9;
-  --accent-foreground: #06110d;
+  --background: #161b14;
+  --surface: #1e241b;
+  --surface-elevated: #272e22;
+  --text-primary: #f2f4ee;
+  --text-secondary: #b8bfae;
+  --text-muted: #838c76;
+  --border: #363f2e;
+  --accent: #4ade80;
+  --accent-hover: #6ee89e;
+  --accent-foreground: #08240f;
   --success: #55c37f;
   --warning: #e0a94a;
-  --scrim-top: rgba(0, 0, 0, 0.55);
-  --scrim-bottom: rgba(0, 0, 0, 0.74);
+  --scrim-top: rgba(10, 16, 10, 0.35);
+  --scrim-bottom: rgba(10, 16, 10, 0.52);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --background: #0a0b0a;
-    --surface: #131513;
-    --surface-elevated: #1a1c1a;
-    --text-primary: #f4f5f2;
-    --text-secondary: #aeb3ac;
-    --text-muted: #6c716b;
-    --border: #26281f;
-    --accent: #3fe0b8;
-    --accent-hover: #6bebc9;
-    --accent-foreground: #06110d;
+    --background: #161b14;
+    --surface: #1e241b;
+    --surface-elevated: #272e22;
+    --text-primary: #f2f4ee;
+    --text-secondary: #b8bfae;
+    --text-muted: #838c76;
+    --border: #363f2e;
+    --accent: #4ade80;
+    --accent-hover: #6ee89e;
+    --accent-foreground: #08240f;
     --success: #55c37f;
     --warning: #e0a94a;
-    --scrim-top: rgba(0, 0, 0, 0.55);
-    --scrim-bottom: rgba(0, 0, 0, 0.74);
+    --scrim-top: rgba(10, 16, 10, 0.35);
+    --scrim-bottom: rgba(10, 16, 10, 0.52);
   }
 }
 
