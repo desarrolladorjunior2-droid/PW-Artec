@@ -32,14 +32,15 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden pt-32 pb-0 md:pt-40"
     >
-      {/* Soft vignette so the headline stays legible over the video backdrop
-          while the footage remains visible toward the edges. */}
+      {/* Light vignette + blur so the headline stays legible while the
+          video reads through clearly rather than sitting behind a flat
+          panel. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10"
+        className="pointer-events-none absolute inset-0 -z-10 backdrop-blur-[3px]"
         style={{
           background:
-            "radial-gradient(ellipse 65% 60% at 28% 32%, var(--background) 0%, color-mix(in srgb, var(--background) 55%, transparent) 45%, transparent 75%)",
+            "radial-gradient(ellipse 68% 65% at 28% 38%, color-mix(in srgb, var(--background) 58%, transparent) 0%, color-mix(in srgb, var(--background) 34%, transparent) 50%, transparent 78%)",
         }}
       />
 
@@ -66,6 +67,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-balance font-display text-[2.6rem] font-medium leading-[1.05] tracking-tight text-[var(--text-primary)] sm:text-6xl lg:text-[4.2rem]"
+            style={{ textShadow: "0 2px 24px color-mix(in srgb, var(--background) 55%, transparent)" }}
           >
             Conectamos marcas, tecnología y territorios a gran escala.
           </motion.h1>
@@ -75,6 +77,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-7 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] md:text-lg"
+            style={{ textShadow: "0 2px 18px var(--background), 0 1px 4px var(--background)" }}
           >
             Integramos estrategia digital, tecnología, operación de contact
             center y ejecución territorial para transformar oportunidades en
@@ -100,7 +103,8 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="glow-card relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] bg-[var(--surface-glass)] p-8 backdrop-blur-xl"
+          className="glow-card relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] p-8 backdrop-blur-xl"
+          style={{ background: "color-mix(in srgb, var(--surface) 68%, transparent)" }}
           aria-label="Flujo del ecosistema ARTEC"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
