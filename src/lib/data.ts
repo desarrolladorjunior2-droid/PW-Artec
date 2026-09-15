@@ -6,11 +6,16 @@ export type Metric = {
 };
 
 export const METRICS: Metric[] = [
-  { value: "70", suffix: "+", numeric: 70, label: "Agents operating simultaneously" },
-  { value: "1,500", suffix: "+", numeric: 1500, label: "Users supported simultaneously" },
-  { value: "360", suffix: "°", numeric: 360, label: "Integrated ecosystem" },
-  { value: "National", label: "Departmental & national scalability" },
+  { value: "70", suffix: "+", numeric: 70, label: "Agentes operando simultáneamente" },
+  { value: "1.500", suffix: "+", numeric: 1500, label: "Usuarios atendidos en simultáneo" },
+  { value: "360", suffix: "°", numeric: 360, label: "Ecosistema integrado" },
+  { value: "Nacional", label: "Escalabilidad departamental y nacional" },
 ];
+
+export type SubService = {
+  title: string;
+  description: string;
+};
 
 export type Solution = {
   id: string;
@@ -18,114 +23,132 @@ export type Solution = {
   category: string;
   title: string;
   positioning: string;
-  services: string[];
+  subservices: SubService[];
 };
 
 export const SOLUTIONS: Solution[] = [
   {
     id: "digital-marketing",
     index: "01",
-    category: "Digital Marketing",
-    title: "Digital Marketing, Advertising & Strategic Acquisition",
-    positioning: "Turn digital attention into measurable opportunities.",
-    services: [
-      "Multichannel paid media",
-      "Social Ads",
-      "Search",
-      "Display",
-      "Campaign planning",
-      "Campaign optimization",
-      "Performance analytics",
-      "ROI monitoring",
-      "Lead generation",
-      "Strategic prospecting",
-      "Mass outreach",
+    category: "Marketing Digital",
+    title: "Marketing digital, publicidad y captación estratégica",
+    positioning: "Convertimos la atención digital en oportunidades medibles.",
+    subservices: [
+      {
+        title: "Planificación y pauta multicanal",
+        description:
+          "Diseño, ejecución y optimización de campañas publicitarias en plataformas digitales (Social Ads, Search, Display) enfocadas en conversión y posicionamiento.",
+      },
+      {
+        title: "Analítica y performance",
+        description:
+          "Monitoreo, seguimiento y auditoría en tiempo real del retorno de inversión (ROI) y del cumplimiento de metas institucionales.",
+      },
+      {
+        title: "Prospección y convocatoria masiva",
+        description:
+          "Estrategias orientadas a la captación de prospectos (leads), la generación de conversaciones directas y la vinculación efectiva con poblaciones objetivo.",
+      },
     ],
   },
   {
     id: "territorial-strategies",
     index: "02",
-    category: "Territorial Strategies",
-    title: "Territorial Strategies & Digital Inclusion",
-    positioning: "Transform digital initiatives into real territorial impact.",
-    services: [
-      "Promotion and communication campaigns",
-      "Awareness programs",
-      "Field activation",
-      "Digital diagnostics",
-      "Field data collection",
-      "Connectivity analysis",
-      "Digital inclusion",
-      "ICT appropriation",
-      "Direct engagement with target populations",
+    category: "Estrategias Territoriales",
+    title: "Estrategias territoriales y apropiación TIC",
+    positioning: "Transformamos las iniciativas digitales en impacto territorial real.",
+    subservices: [
+      {
+        title: "Campañas de promoción y divulgación",
+        description:
+          "Diseño e implementación de programas de concientización, socialización y acciones de campo para proyectos de impacto social y regional.",
+      },
+      {
+        title: "Diagnóstico digital y levantamiento de campo",
+        description:
+          "Levantamiento de datos en territorio para identificar necesidades de conectividad, inclusión y beneficios digitales.",
+      },
+      {
+        title: "Cierre de brecha digital",
+        description:
+          "Campañas orientadas a la apropiación de las TIC, la adopción digital y la vinculación directa con el usuario final.",
+      },
     ],
   },
   {
     id: "contact-center",
     index: "03",
     category: "Contact Center / BPO",
-    title: "Contact Center & Operational Conversion",
-    positioning: "Human operations designed to turn conversations into outcomes.",
-    services: [
-      "Lead management",
-      "Multichannel contact center",
-      "Customer support",
-      "Customer retention",
-      "Telemarketing",
-      "Data validation",
-      "Surveys",
-      "Confirmation campaigns",
-      "Conversion operations",
+    title: "Contact center y conversión operativa (BPO)",
+    positioning: "Operaciones humanas diseñadas para convertir conversaciones en resultados.",
+    subservices: [
+      {
+        title: "Atención y conversión de leads",
+        description:
+          "Operación masiva con más de 70 agentes operando simultáneamente para gestionar las conversaciones y los registros generados por las campañas digitales.",
+      },
+      {
+        title: "Contact center multicanal",
+        description:
+          "Infraestructura para la atención, soporte y la fidelización de más de 1.500 usuarios en simultáneo, garantizando la satisfacción del cliente final.",
+      },
+      {
+        title: "Telemercadeo y confirmación",
+        description:
+          "Validación de datos, encuestas telefónicas y seguimiento de los procesos de convocatoria.",
+      },
     ],
   },
   {
     id: "web-technology",
     index: "04",
-    category: "Web & Technology",
-    title: "Web Ecosystems & Technology",
-    positioning: "Technology built around performance, scalability and experience.",
-    services: [
-      "Landing page development",
-      "Corporate websites",
-      "Campaign websites",
-      "UX/UI",
-      "SEO/SEM-oriented platforms",
-      "Cloud infrastructure",
-      "Hosting",
-      "High availability",
-      "Technical support",
-      "Technology integration",
-      "Maintenance",
+    category: "Web y Tecnología",
+    title: "Ecosistema web y soporte tecnológico",
+    positioning: "Tecnología construida para el rendimiento, la escalabilidad y la experiencia.",
+    subservices: [
+      {
+        title: "Desarrollo de landing pages y sitios web",
+        description:
+          "Creación de plataformas web optimizadas para campañas publicitarias, estrategias de posicionamiento SEO/SEM y una experiencia de usuario (UX/UI) óptima.",
+      },
+      {
+        title: "Servidores y hosting de alta disponibilidad",
+        description:
+          "Gestión, administración y soporte de infraestructura en la nube para garantizar un rendimiento continuo ante picos de tráfico web.",
+      },
+      {
+        title: "Soporte y mantenimiento especializado",
+        description:
+          "Acompañamiento técnico continuo e integración de herramientas tecnológicas de vanguardia.",
+      },
     ],
   },
   {
     id: "btl-events",
     index: "05",
-    category: "BTL & Events",
-    title: "BTL, Space Adaptation & Corporate Events",
-    positioning: "Turn physical spaces into experiences that create impact.",
-    services: [
-      "Event spaces",
-      "Corporate events",
-      "Space adaptation",
-      "Production",
-      "Event infrastructure",
-      "Customized solutions",
-      "End-to-end execution",
+    category: "BTL y Eventos",
+    title: "Adecuación BTL y producción de eventos corporativos",
+    positioning: "Convertimos espacios físicos en experiencias que generan impacto.",
+    subservices: [
+      {
+        title: "Adecuación de espacios para montajes y eventos",
+        description:
+          "Creamos y acondicionamos escenarios de alto impacto para tus eventos corporativos. Soluciones a la medida, sin sobrecostos y con calidad garantizada de principio a fin.",
+      },
     ],
   },
 ];
 
 export const ECOSYSTEM_STEPS = [
-  { label: "Digital Strategy", short: "Strategy" },
-  { label: "Advertising", short: "Advertising" },
-  { label: "Landing Page / Web", short: "Web" },
-  { label: "Lead Capture", short: "Leads" },
+  { label: "Estrategia digital", short: "Estrategia" },
+  { label: "Publicidad", short: "Publicidad" },
+  { label: "Landing page / Web", short: "Web" },
+  { label: "Captación de leads", short: "Leads" },
   { label: "Contact Center", short: "Contact Center" },
-  { label: "Conversion", short: "Conversion" },
-  { label: "Follow-up", short: "Follow-up" },
-  { label: "Analytics", short: "Analytics" },
-  { label: "Territorial Impact", short: "Territory" },
+  { label: "Conversión", short: "Conversión" },
+  { label: "Seguimiento", short: "Seguimiento" },
+  { label: "Analítica", short: "Analítica" },
+  { label: "Impacto territorial", short: "Territorio" },
 ] as const;
 
 export type EcosystemNode = {
@@ -138,44 +161,44 @@ export type EcosystemNode = {
 export const ECOSYSTEM_NODES: EcosystemNode[] = [
   {
     id: "strategy",
-    label: "Strategy",
+    label: "Estrategia",
     description:
-      "Digital and territorial strategy design: campaign planning, audience definition and roadmap for measurable outcomes.",
+      "Diseño de estrategia digital y territorial: planificación de campañas, definición de audiencias y hoja de ruta para resultados medibles.",
     connections: ["marketing", "territory"],
   },
   {
     id: "marketing",
     label: "Marketing",
     description:
-      "Multichannel paid media, search, social and display campaigns engineered for lead generation and strategic prospecting.",
+      "Pauta multicanal, campañas de search, social y display diseñadas para la generación de leads y la prospección estratégica.",
     connections: ["technology", "conversion"],
   },
   {
     id: "technology",
-    label: "Technology",
+    label: "Tecnología",
     description:
-      "Landing pages, corporate websites and cloud infrastructure that capture and route demand into the ecosystem.",
+      "Landing pages, sitios corporativos e infraestructura en la nube que captan y enrutan la demanda hacia el ecosistema.",
     connections: ["people", "marketing"],
   },
   {
     id: "people",
-    label: "People",
+    label: "Personas",
     description:
-      "A multichannel contact center operation — 70+ agents managing conversations, support and retention at scale.",
+      "Operación de contact center multicanal: más de 70 agentes gestionando conversaciones, soporte y fidelización a gran escala.",
     connections: ["conversion", "technology"],
   },
   {
     id: "territory",
-    label: "Territory",
+    label: "Territorio",
     description:
-      "Field activation, digital inclusion and ICT appropriation programs that bring the ecosystem into communities.",
+      "Activación en campo, inclusión digital y programas de apropiación TIC que llevan el ecosistema a las comunidades.",
     connections: ["strategy", "conversion"],
   },
   {
     id: "conversion",
-    label: "Conversion",
+    label: "Conversión",
     description:
-      "Measurement, follow-up and reporting that close the loop — turning activity into transparent, trackable results.",
+      "Medición, seguimiento y reportería que cierran el ciclo, convirtiendo la operación en resultados transparentes y medibles.",
     connections: ["strategy", "people"],
   },
 ];
@@ -189,21 +212,21 @@ export type WhyPillar = {
 export const WHY_PILLARS: WhyPillar[] = [
   {
     index: "01",
-    title: "360° Ecosystem",
+    title: "Ecosistema 360° (sin intermediarios)",
     description:
-      "Digital advertising, web platforms, lead acquisition and contact center operations integrated into one ecosystem.",
+      "Integramos pauta digital, plataformas web donde captamos a los usuarios y nuestro equipo de Contact Center que los atiende y convierte.",
   },
   {
     index: "02",
-    title: "Scalability",
+    title: "Capacidad de escalabilidad",
     description:
-      "Experience supporting focused corporate campaigns as well as departmental and national coverage projects.",
+      "Experiencia comprobada en la gestión de campañas corporativas focalizadas y proyectos de cobertura departamental o nacional.",
   },
   {
     index: "03",
-    title: "Operational Rigor",
+    title: "Rigor operativo",
     description:
-      "Transparent metrics, optimized budgets and multidisciplinary teams focused on achieving objectives.",
+      "Métricas transparentes, presupuestos optimizados y un equipo multidisciplinario enfocado en la consecución de objetivos.",
   },
 ];
 
@@ -214,89 +237,89 @@ export type CapabilityGroup = {
 
 export const CAPABILITIES: CapabilityGroup[] = [
   {
-    category: "Strategy",
-    items: ["Digital strategy", "Campaign planning", "Territorial planning"],
+    category: "Estrategia",
+    items: ["Estrategia digital", "Planificación de campañas", "Planificación territorial"],
   },
   {
     category: "Marketing",
-    items: ["Paid media", "Lead generation", "Performance", "Prospecting"],
+    items: ["Pauta multicanal", "Generación de leads", "Performance", "Prospección"],
   },
   {
-    category: "Technology",
+    category: "Tecnología",
     items: [
-      "Web",
-      "Landing pages",
+      "Sitios y landing pages",
       "UX/UI",
+      "SEO/SEM",
       "Hosting",
-      "Cloud infrastructure",
-      "Technical support",
+      "Infraestructura en la nube",
+      "Soporte técnico",
     ],
   },
   {
-    category: "Operations",
+    category: "Operaciones",
     items: [
       "Contact center",
-      "Telemarketing",
-      "Validation",
-      "Conversion",
-      "Customer support",
+      "Telemercadeo",
+      "Validación de datos",
+      "Conversión",
+      "Atención al cliente",
     ],
   },
   {
-    category: "Territory",
+    category: "Territorio",
     items: [
-      "Field work",
-      "Digital inclusion",
-      "ICT appropriation",
-      "Community engagement",
+      "Trabajo de campo",
+      "Inclusión digital",
+      "Apropiación TIC",
+      "Vinculación comunitaria",
     ],
   },
   {
-    category: "Events",
-    items: ["BTL", "Space adaptation", "Corporate events", "Production"],
+    category: "Eventos",
+    items: ["BTL", "Adecuación de espacios", "Eventos corporativos", "Producción"],
   },
 ];
 
 export const CASE_STUDY = {
-  eyebrow: "Impact in territory",
-  title: "Digital inclusion and large-scale communication in Putumayo.",
+  eyebrow: "Impacto territorial",
+  title: "Inclusión digital y comunicación de amplio alcance en Putumayo.",
   summary:
-    "Conectividad y apropiación tecnológica para la inclusión digital en el departamento de Putumayo.",
+    'Conectividad y apropiación tecnológica para la inclusión digital en el departamento de Putumayo.',
   timeline: [
     {
-      label: "Challenge",
+      label: "Reto",
       description:
-        "Extend connectivity awareness and digital inclusion to communities across the Putumayo department.",
+        "Masificar el acceso a internet y fortalecer la apropiación de las TIC en el departamento de Putumayo.",
     },
     {
-      label: "Strategy",
+      label: "Estrategia",
       description:
-        "Communication strategies and promotion campaigns designed to reach target populations across the territory.",
+        "Diseño de estrategias de divulgación, promoción y encuestas para llegar a las comunidades del territorio.",
     },
     {
-      label: "Field Execution",
+      label: "Ejecución en campo",
       description:
-        "Field data collection, connectivity analysis and direct outreach conducted on the ground.",
+        "Aplicación de encuestas y trabajo de campo, articulando marketing, tecnología y equipos territoriales.",
     },
     {
-      label: "Community Engagement",
+      label: "Vinculación comunitaria",
       description:
-        "Surveys, ICT appropriation activities and direct engagement with local communities.",
+        "Acompañamiento directo a las comunidades para garantizar una operación efectiva y cercana.",
     },
     {
-      label: "Impact",
+      label: "Impacto",
       description:
-        "Contribution to internet access expansion efforts and digital inclusion in the department.",
+        "Contribución a la masificación del acceso a internet y a la apropiación tecnológica en el departamento.",
     },
   ],
 };
 
 export const SERVICE_OPTIONS = [
-  "Digital Marketing",
-  "Territorial Strategies",
+  "Marketing Digital",
+  "Estrategias Territoriales",
   "Contact Center / BPO",
-  "Web & Technology",
-  "BTL & Events",
-  "Integrated Solution",
-  "Other",
+  "Web y Tecnología",
+  "BTL y Eventos",
+  "Solución Integral",
+  "Otro",
 ] as const;

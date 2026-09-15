@@ -13,15 +13,15 @@ export function Solutions() {
     <section id="solutions" className="py-24 md:py-32">
       <div className="container-artec">
         <SectionHeading
-          eyebrow="Solutions"
-          title="Five capabilities. One coordinated delivery."
-          description="Each line operates as a specialized practice — and as part of a single ecosystem ARTEC can run end to end."
+          eyebrow="Soluciones"
+          title="Cinco capacidades. Una operación coordinada."
+          description="Cada línea opera como una práctica especializada — y, como parte de un solo ecosistema, ARTEC puede gestionarlas de principio a fin."
         />
 
         {/* Desktop: expanding panels */}
         <div
           className="mt-16 hidden gap-2 lg:flex"
-          style={{ height: "540px" }}
+          style={{ height: "580px" }}
         >
           {SOLUTIONS.map((solution, i) => {
             const isActive = i === activeIndex;
@@ -81,13 +81,15 @@ export function Solutions() {
                           <p className="mt-3 max-w-md text-sm leading-relaxed text-[var(--text-secondary)]">
                             {solution.positioning}
                           </p>
-                          <ul className="mt-5 flex max-w-md flex-wrap gap-2">
-                            {solution.services.slice(0, 7).map((service) => (
-                              <li
-                                key={service}
-                                className="rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--text-secondary)]"
-                              >
-                                {service}
+                          <ul className="mt-5 max-w-md space-y-3">
+                            {solution.subservices.map((sub) => (
+                              <li key={sub.title} className="border-l-2 border-[var(--border)] pl-3">
+                                <p className="text-sm font-semibold text-[var(--text-primary)]">
+                                  {sub.title}
+                                </p>
+                                <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-[var(--text-secondary)]">
+                                  {sub.description}
+                                </p>
                               </li>
                             ))}
                           </ul>
@@ -95,7 +97,7 @@ export function Solutions() {
                             href="#contact"
                             className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
                           >
-                            Explore this solution
+                            Explorar esta solución
                             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                           </a>
                         </motion.div>
@@ -133,13 +135,15 @@ export function Solutions() {
                 <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {solution.positioning}
                 </p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {solution.services.map((service) => (
-                    <li
-                      key={service}
-                      className="rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--text-secondary)]"
-                    >
-                      {service}
+                <ul className="mt-4 space-y-4">
+                  {solution.subservices.map((sub) => (
+                    <li key={sub.title} className="border-l-2 border-[var(--border)] pl-3">
+                      <p className="text-sm font-semibold text-[var(--text-primary)]">
+                        {sub.title}
+                      </p>
+                      <p className="mt-0.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                        {sub.description}
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -147,7 +151,7 @@ export function Solutions() {
                   href="#contact"
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
                 >
-                  Explore this solution
+                  Explorar esta solución
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>

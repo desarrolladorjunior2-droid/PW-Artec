@@ -7,8 +7,8 @@ export function Capabilities() {
     <section id="capabilities" className="border-t border-[var(--border)] py-24 md:py-32">
       <div className="container-artec">
         <SectionHeading
-          eyebrow="Capabilities"
-          title="A full matrix of strategic, technical and operational capability."
+          eyebrow="Capacidades"
+          title="Una matriz completa de capacidad estratégica, técnica y operativa."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-3">

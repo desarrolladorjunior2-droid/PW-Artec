@@ -2,12 +2,12 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 
 const FOCUS_AREAS = [
-  "Integrated capabilities",
-  "Strategic approach",
-  "Technology",
-  "Human operations",
-  "Territorial execution",
-  "Scalability",
+  "Capacidades integradas",
+  "Enfoque estratégico",
+  "Tecnología",
+  "Operación humana",
+  "Ejecución territorial",
+  "Escalabilidad",
 ];
 
 export function About() {
@@ -19,9 +19,9 @@ export function About() {
       <div className="container-artec grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
           <SectionHeading
-            eyebrow="About ARTEC"
-            title="Technology matters more when it creates real-world results."
-            description="ARTEC S.A.S. operates as an integrated partner — combining strategic planning, digital execution, technology infrastructure, human operations and territorial implementation into a single, coordinated ecosystem built to scale."
+            eyebrow="Sobre ARTEC"
+            title="Impulsamos el alcance y los resultados de su organización con un aliado integral."
+            description="ARTEC S.A.S. opera como un aliado integral que combina planeación estratégica, ejecución digital, infraestructura tecnológica, operación humana e implementación territorial en un ecosistema único y coordinado, construido para escalar."
           />
         </div>
 

@@ -44,7 +44,7 @@ export function MetricCounter({
     return () => cancelAnimationFrame(frame);
   }, [isInView, numeric, duration, prefersReducedMotion]);
 
-  const formatted = new Intl.NumberFormat("en-US").format(value);
+  const formatted = new Intl.NumberFormat("es-CO").format(value);
 
   return (
     <span ref={ref} className="num-tabular" aria-label={`${display}${suffix}`}>

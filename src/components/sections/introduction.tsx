@@ -8,9 +8,9 @@ export function Introduction() {
       <div className="container-artec">
         <div id="introduction-heading">
           <SectionHeading
-            eyebrow="What we do"
-            title="One ecosystem. Multiple capabilities."
-            description="ARTEC connects strategic planning, digital execution, technology, human operations and territorial implementation — as one coordinated system, not five separate vendors."
+            eyebrow="Qué hacemos"
+            title="Un ecosistema. Múltiples capacidades."
+            description="ARTEC conecta la planeación estratégica, la ejecución digital, la tecnología, la operación humana y la implementación territorial en un solo sistema coordinado, no en cinco proveedores separados."
           />
         </div>
 

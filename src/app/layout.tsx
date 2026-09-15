@@ -97,7 +97,7 @@ const jsonLd = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="es"
       suppressHydrationWarning
       className={`${jakarta.variable} h-full antialiased`}
     >
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         <ThemeProvider>
           <a href="#main" className="skip-link">
-            Skip to content
+            Saltar al contenido
           </a>
           {children}
         </ThemeProvider>

@@ -7,8 +7,8 @@ export function WhyArtec() {
     <section className="border-t border-[var(--border)] py-24 md:py-32">
       <div className="container-artec">
         <SectionHeading
-          eyebrow="Why ARTEC"
-          title="Why organizations choose an integrated partner."
+          eyebrow="Por qué ARTEC"
+          title="Por qué las organizaciones eligen un aliado integral."
         />
 
         <div className="mt-16 grid gap-10 md:grid-cols-3 md:gap-8">

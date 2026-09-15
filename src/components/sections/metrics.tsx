@@ -6,7 +6,7 @@ export function Metrics() {
   return (
     <section
       id="metrics"
-      aria-label="ARTEC operational scale"
+      aria-label="Escala operativa de ARTEC"
       className="border-y border-[var(--border)] bg-[var(--surface)]"
     >
       <div className="container-artec grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-4 md:py-20">

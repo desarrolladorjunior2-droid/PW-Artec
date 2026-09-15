@@ -38,13 +38,13 @@ export function Contact() {
 
   const validate = (): boolean => {
     const nextErrors: Partial<Record<keyof FormState, string>> = {};
-    if (!form.name.trim()) nextErrors.name = "Please enter your name.";
+    if (!form.name.trim()) nextErrors.name = "Por favor ingresa tu nombre.";
     if (!form.email.trim()) {
-      nextErrors.email = "Please enter your email.";
+      nextErrors.email = "Por favor ingresa tu correo electrónico.";
     } else if (!EMAIL_PATTERN.test(form.email)) {
-      nextErrors.email = "Please enter a valid email address.";
+      nextErrors.email = "Por favor ingresa un correo electrónico válido.";
     }
-    if (!form.message.trim()) nextErrors.message = "Tell us about your project.";
+    if (!form.message.trim()) nextErrors.message = "Cuéntanos sobre tu proyecto.";
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
   };
@@ -54,10 +54,10 @@ export function Contact() {
     if (!validate()) return;
 
     const subject = encodeURIComponent(
-      `New project inquiry — ${form.service}`
+      `Nueva solicitud de proyecto — ${form.service}`
     );
     const body = encodeURIComponent(
-      `Name: ${form.name}\nCompany: ${form.company || "—"}\nEmail: ${form.email}\nPhone: ${form.phone || "—"}\nService of interest: ${form.service}\n\nMessage:\n${form.message}`
+      `Nombre: ${form.name}\nEmpresa: ${form.company || "—"}\nCorreo: ${form.email}\nTeléfono: ${form.phone || "—"}\nServicio de interés: ${form.service}\n\nMensaje:\n${form.message}`
     );
 
     window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
@@ -69,9 +69,9 @@ export function Contact() {
       <div className="container-artec grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div>
           <SectionHeading
-            eyebrow="Contact"
-            title="Let's build the next opportunity together."
-            description="Tell us what you're trying to achieve and our team will help you identify the right combination of strategy, technology and execution."
+            eyebrow="Contacto"
+            title="Construyamos juntos la siguiente oportunidad."
+            description="Cuéntanos qué quieres lograr y nuestro equipo te ayudará a identificar la combinación correcta de estrategia, tecnología y ejecución."
           />
 
           <Reveal delay={0.15}>
@@ -79,7 +79,7 @@ export function Contact() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--accent)]" aria-hidden="true" />
                 <div>
-                  <dt className="sr-only">Address</dt>
+                  <dt className="sr-only">Dirección</dt>
                   <dd className="text-sm text-[var(--text-secondary)]">
                     {SITE.address}
                     <br />
@@ -89,7 +89,7 @@ export function Contact() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-[var(--accent)]" aria-hidden="true" />
-                <dt className="sr-only">Email</dt>
+                <dt className="sr-only">Correo electrónico</dt>
                 <dd className="text-sm">
                   <a
                     href={`mailto:${SITE.email}`}
@@ -101,7 +101,7 @@ export function Contact() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-[var(--accent)]" aria-hidden="true" />
-                <dt className="sr-only">Phone</dt>
+                <dt className="sr-only">Teléfono</dt>
                 <dd className="text-sm">
                   <a
                     href={`tel:${SITE.phoneHref}`}
@@ -123,7 +123,7 @@ export function Contact() {
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <Field
-                label="Name"
+                label="Nombre"
                 id="name"
                 required
                 value={form.name}
@@ -131,13 +131,13 @@ export function Contact() {
                 error={errors.name}
               />
               <Field
-                label="Company"
+                label="Empresa"
                 id="company"
                 value={form.company}
                 onChange={update("company")}
               />
               <Field
-                label="Email"
+                label="Correo electrónico"
                 id="email"
                 type="email"
                 required
@@ -146,7 +146,7 @@ export function Contact() {
                 error={errors.email}
               />
               <Field
-                label="Phone"
+                label="Teléfono"
                 id="phone"
                 type="tel"
                 value={form.phone}
@@ -158,7 +158,7 @@ export function Contact() {
                   htmlFor="service"
                   className="text-sm font-medium text-[var(--text-primary)]"
                 >
-                  Service of interest
+                  Servicio de interés
                 </label>
                 <select
                   id="service"
@@ -179,7 +179,7 @@ export function Contact() {
                   htmlFor="message"
                   className="text-sm font-medium text-[var(--text-primary)]"
                 >
-                  Project / message <span className="text-[var(--accent)]">*</span>
+                  Proyecto / mensaje <span className="text-[var(--accent)]">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -203,12 +203,12 @@ export function Contact() {
               type="submit"
               className="mt-7 w-full rounded-full bg-[var(--accent)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors duration-300 hover:bg-[var(--accent-hover)] sm:w-auto"
             >
-              Start a conversation
+              Iniciar conversación
             </button>
 
             <p role="status" aria-live="polite" className="mt-4 text-sm text-[var(--text-secondary)]">
               {status === "sent"
-                ? "Your email client should now be open with your message ready to send."
+                ? "Tu cliente de correo debería estar abierto con el mensaje listo para enviar."
                 : ""}
             </p>
           </form>

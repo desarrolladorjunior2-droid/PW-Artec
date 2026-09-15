@@ -25,8 +25,8 @@ export function Ecosystem360() {
       <div className="container-artec">
         <SectionHeading
           eyebrow="ARTEC 360°"
-          title="One ecosystem. No unnecessary intermediaries."
-          description="From the first digital impression to the final human interaction, ARTEC connects every stage of the process."
+          title="Un ecosistema. Sin intermediarios innecesarios."
+          description="Desde la primera impresión digital hasta la interacción humana final, ARTEC conecta cada etapa del proceso."
         />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-8">
@@ -34,7 +34,7 @@ export function Ecosystem360() {
           <Reveal>
             <div
               role="group"
-              aria-label="ARTEC 360 ecosystem explorer"
+              aria-label="Explorador del ecosistema ARTEC 360"
               className="relative mx-auto aspect-square w-full max-w-md"
             >
               <div className="absolute inset-[18%] rounded-full border border-dashed border-[var(--border)]" />
@@ -107,7 +107,7 @@ export function Ecosystem360() {
                           onClick={() => setActiveId(id)}
                           className="rounded-full border border-[var(--border)] px-4 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                         >
-                          Connects to {connected.label}
+                          Conecta con {connected.label}
                         </button>
                       );
                     })}
@@ -122,7 +122,7 @@ export function Ecosystem360() {
         <div className="mt-24">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-              The full journey
+              El recorrido completo
             </p>
           </Reveal>
           <div className="mt-8 overflow-x-auto pb-4">

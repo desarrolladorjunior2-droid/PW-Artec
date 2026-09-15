@@ -30,10 +30,10 @@ export function CaseStudy() {
             </Reveal>
             <Reveal delay={0.24}>
               <p className="mt-5 text-sm leading-relaxed text-[var(--text-muted)]">
-                ARTEC contributed to communication strategies, outreach,
-                surveys, promotion, connectivity expansion efforts, ICT
-                appropriation, community engagement and field operations
-                across the department.
+                Lideramos las estrategias de divulgación, aplicación de
+                encuestas y promoción para masificar el acceso a internet y
+                fortalecer la apropiación de las TIC, garantizando una
+                operación efectiva y un impacto directo en las comunidades.
               </p>
             </Reveal>
           </div>

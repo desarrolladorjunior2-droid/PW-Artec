@@ -43,12 +43,12 @@ export function Navbar() {
             scrolled ? "py-3" : "py-5"
           }`}
         >
-          <a href="#top" aria-label="ARTEC — home">
+          <a href="#top" aria-label="ARTEC — inicio">
             <Logo />
           </a>
 
           <nav
-            aria-label="Primary"
+            aria-label="Principal"
             className="hidden items-center gap-8 lg:flex"
           >
             {NAV_LINKS.map((link) => {
@@ -79,7 +79,7 @@ export function Navbar() {
               href="#contact"
               className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors duration-300 hover:bg-[var(--accent-hover)]"
             >
-              Let&rsquo;s talk
+              Hablemos
             </a>
           </div>
 
@@ -88,7 +88,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
-              aria-label="Open menu"
+              aria-label="Abrir menú"
               aria-expanded={menuOpen}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text-primary)]"
             >
@@ -108,14 +108,14 @@ export function Navbar() {
             className="fixed inset-0 z-[60] flex flex-col bg-[var(--background)] lg:hidden"
             role="dialog"
             aria-modal="true"
-            aria-label="Mobile navigation"
+            aria-label="Navegación móvil"
           >
             <div className="container-artec flex items-center justify-between py-5">
               <Logo />
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
-                aria-label="Close menu"
+                aria-label="Cerrar menú"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text-primary)]"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
@@ -123,7 +123,7 @@ export function Navbar() {
             </div>
 
             <nav
-              aria-label="Mobile"
+              aria-label="Menú móvil"
               className="container-artec flex flex-1 flex-col justify-center gap-2"
             >
               {NAV_LINKS.map((link, i) => (
@@ -147,7 +147,7 @@ export function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-4 text-base font-semibold text-[var(--accent-foreground)]"
               >
-                Let&rsquo;s talk about your project
+                Hablemos de tu proyecto
               </a>
             </div>
           </motion.div>

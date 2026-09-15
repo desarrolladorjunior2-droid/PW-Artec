@@ -5,13 +5,13 @@ import { ArrowDown } from "lucide-react";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 
 const FLOW_STEPS = [
-  "Strategy",
+  "Estrategia",
   "Digital",
   "Web",
   "Leads",
   "Contact Center",
-  "Conversion",
-  "Impact",
+  "Conversión",
+  "Impacto",
 ];
 
 export function Hero() {
@@ -39,7 +39,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]"
           >
-            ARTEC S.A.S. — Integrated Solutions
+            ARTEC S.A.S. — Soluciones Integradas
           </motion.p>
 
           <motion.h1
@@ -48,7 +48,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-balance font-display text-[2.6rem] font-medium leading-[1.05] tracking-tight text-[var(--text-primary)] sm:text-6xl lg:text-[4.2rem]"
           >
-            Connecting brands, technology and territories at scale.
+            Conectamos marcas, tecnología y territorios a gran escala.
           </motion.h1>
 
           <motion.p
@@ -57,9 +57,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-7 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] md:text-lg"
           >
-            We integrate digital strategy, technology, contact center
-            operations and territorial execution to transform opportunities
-            into measurable results.
+            Integramos estrategia digital, tecnología, operación de contact
+            center y ejecución territorial para transformar oportunidades en
+            resultados medibles.
           </motion.p>
 
           <motion.div
@@ -69,10 +69,10 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <MagneticCTA href="#contact" variant="primary">
-              Let&rsquo;s talk about your project
+              Hablemos de tu proyecto
             </MagneticCTA>
             <MagneticCTA href="#solutions" variant="secondary">
-              Explore our solutions
+              Explora nuestras soluciones
             </MagneticCTA>
           </motion.div>
         </div>
@@ -82,10 +82,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
           className="relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
-          aria-label="ARTEC integrated ecosystem flow"
+          aria-label="Flujo del ecosistema ARTEC"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-            The ecosystem
+            El ecosistema
           </p>
           <div className="relative mt-6 pl-6">
             <div
@@ -140,9 +140,9 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
         className="mx-auto mt-16 hidden w-fit items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)] transition-colors hover:text-[var(--accent)] md:flex"
-        aria-label="Scroll to explore"
+        aria-label="Desplázate para explorar"
       >
-        Scroll to explore
+        Desplázate para explorar
         <ArrowDown className="h-3.5 w-3.5 animate-bounce" aria-hidden="true" />
       </motion.a>
     </section>

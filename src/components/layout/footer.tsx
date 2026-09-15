@@ -8,14 +8,14 @@ export function Footer() {
         <div className="max-w-sm">
           <Logo />
           <p className="mt-5 text-sm leading-relaxed text-[var(--text-secondary)]">
-            Connecting brands and territories with digital strategy,
-            technology and large-scale conversion.
+            Conectamos marcas y territorios con estrategia digital,
+            tecnología y conversión a gran escala.
           </p>
         </div>
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-            Navigate
+            Navegación
           </p>
           <ul className="mt-5 space-y-3">
             {NAV_LINKS.map((link) => (
@@ -33,7 +33,7 @@ export function Footer() {
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-            Contact
+            Contacto
           </p>
           <ul className="mt-5 space-y-3 text-sm text-[var(--text-secondary)]">
             <li>{SITE.address}</li>
@@ -60,7 +60,7 @@ export function Footer() {
 
       <div className="border-t border-[var(--border)]">
         <div className="container-artec flex flex-col items-center justify-between gap-3 py-6 text-xs text-[var(--text-muted)] sm:flex-row">
-          <p>© {new Date().getFullYear()} ARTEC S.A.S. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ARTEC S.A.S. Todos los derechos reservados.</p>
           <p>Bogotá D.C., Colombia</p>
         </div>
       </div>

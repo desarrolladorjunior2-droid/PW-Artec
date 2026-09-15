@@ -8,14 +8,14 @@ export const SITE = {
   email: "info@artecsas.co",
   phone: "315 050 6646",
   phoneHref: "+573150506646",
-  address: "Carrera 14 # 76 - 25, Oficina 204",
+  address: "Carrera 14 # 76 - 25 Of. 204",
   city: "Bogotá D.C., Colombia",
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Solutions", href: "#solutions" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Impact", href: "#impact" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Soluciones", href: "#solutions" },
+  { label: "Capacidades", href: "#capabilities" },
+  { label: "Impacto", href: "#impact" },
+  { label: "Nosotros", href: "#about" },
+  { label: "Contacto", href: "#contact" },
 ] as const;
