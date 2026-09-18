@@ -5,16 +5,16 @@ import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SOLUTIONS } from "@/lib/data";
-import { brandColor } from "@/lib/brand-colors";
+import { brandColor, sectionTint } from "@/lib/brand-colors";
 import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section
+    <section style={sectionTint("var(--brand-orange)")}
       id="solutions"
-      className="relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionPhoto
         src="/images/sections/solutions.webp"

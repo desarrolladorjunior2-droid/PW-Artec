@@ -37,10 +37,15 @@ export function Hero() {
           panel. */}
       <div
         aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 lg:hidden"
+        style={{ background: "color-mix(in srgb, var(--background) 80%, transparent)" }}
+      />
+      <div
+        aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 backdrop-blur-[3px]"
         style={{
           background:
-            "radial-gradient(ellipse 68% 65% at 28% 38%, color-mix(in srgb, var(--background) 58%, transparent) 0%, color-mix(in srgb, var(--background) 34%, transparent) 50%, transparent 78%)",
+            "radial-gradient(ellipse 68% 65% at 28% 38%, color-mix(in srgb, var(--background) 90%, transparent) 0%, color-mix(in srgb, var(--background) 66%, transparent) 50%, transparent 78%)",
         }}
       />
 
@@ -104,7 +109,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
           className="glow-card relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] p-8 backdrop-blur-xl"
-          style={{ background: "color-mix(in srgb, var(--surface) 68%, transparent)" }}
+          style={{ background: "color-mix(in srgb, var(--solid-tint) 92%, transparent)" }}
           aria-label="Flujo del ecosistema ARTEC"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
@@ -167,7 +172,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="mx-auto mb-10 hidden w-fit items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)] transition-colors hover:text-[var(--accent)] md:flex"
+        className="mx-auto mb-10 hidden w-fit items-center gap-2 rounded-full bg-[var(--surface-glass-strong)] px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)] transition-colors hover:text-[var(--accent)] md:flex"
         aria-label="Desplázate para explorar"
       >
         Desplázate para explorar
@@ -176,7 +181,7 @@ export function Hero() {
 
       <div
         aria-hidden="true"
-        className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-4 backdrop-blur-md"
+        className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass-strong)] py-4 backdrop-blur-md"
       >
         <div className={`flex w-max ${prefersReducedMotion ? "" : "animate-marquee"}`}>
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (

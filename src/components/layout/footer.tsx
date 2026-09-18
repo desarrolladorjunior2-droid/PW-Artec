@@ -1,10 +1,11 @@
 import { Logo } from "@/components/ui/logo";
 import { NAV_LINKS, SITE } from "@/lib/constants";
+import { sectionTint } from "@/lib/brand-colors";
 import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
+    <footer style={sectionTint("var(--brand-indigo)")} className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
       <SectionPhoto
         src="/images/sections/footer.webp"
         colors={["var(--brand-indigo)", "var(--brand-green)"]}

@@ -1,12 +1,12 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { WHY_PILLARS } from "@/lib/data";
-import { brandColor } from "@/lib/brand-colors";
+import { brandColor, sectionTint } from "@/lib/brand-colors";
 import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function WhyArtec() {
   return (
-    <section className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
+    <section style={sectionTint("var(--brand-blue)")} className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
       <SectionPhoto
         src="/images/sections/whyartec.webp"
         colors={["var(--brand-blue)", "var(--brand-orange)"]}

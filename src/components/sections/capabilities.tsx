@@ -1,14 +1,14 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { CAPABILITIES } from "@/lib/data";
-import { brandColor } from "@/lib/brand-colors";
+import { brandColor, sectionTint } from "@/lib/brand-colors";
 import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Capabilities() {
   return (
-    <section
+    <section style={sectionTint("var(--brand-indigo)")}
       id="capabilities"
-      className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionPhoto
         src="/images/sections/capabilities.webp"

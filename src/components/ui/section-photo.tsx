@@ -19,7 +19,7 @@ export function SectionPhoto({ src, colors, position = "center" }: SectionPhotoP
         src={src}
         alt=""
         className="absolute inset-0 h-full w-full scale-110 object-cover"
-        style={{ objectPosition: position, filter: "blur(32px) saturate(1.3)" }}
+        style={{ objectPosition: position, filter: "blur(32px) saturate(1.3) brightness(var(--photo-brightness, 1))" }}
         loading="lazy"
         decoding="async"
       />
@@ -27,12 +27,12 @@ export function SectionPhoto({ src, colors, position = "center" }: SectionPhotoP
           contrast stays predictable wherever the photo is dark or bright. */}
       <div
         className="absolute inset-0"
-        style={{ background: "color-mix(in srgb, var(--background) 66%, transparent)" }}
+        style={{ background: `color-mix(in srgb, color-mix(in srgb, ${colors[0]} var(--tint-pct), var(--background)) var(--veil-pct), transparent)` }}
       />
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(135deg, color-mix(in srgb, ${colors[0]} 34%, transparent) 0%, color-mix(in srgb, ${colors[0]} 14%, transparent) 45%, transparent 80%)`,
+          background: `linear-gradient(135deg, color-mix(in srgb, ${colors[0]} var(--wash-pct), transparent) 0%, color-mix(in srgb, ${colors[0]} calc(var(--wash-pct) * 0.4), transparent) 45%, transparent 80%)`,
         }}
       />
       <div

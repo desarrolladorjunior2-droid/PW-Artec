@@ -37,7 +37,7 @@ export function MagneticCTA({
   const styles =
     variant === "primary"
       ? "bg-[var(--accent)] text-[var(--accent-foreground)] hover:bg-[var(--accent-hover)]"
-      : "border border-[var(--border)] text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)]";
+      : "border border-[var(--text-muted)] bg-[var(--surface-glass-strong)] text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)]";
 
   return (
     <motion.div

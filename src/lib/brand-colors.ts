@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 /**
  * Rotating brand palette taken from the ARTEC portfolio (blue, indigo,
  * orange, red, green). Used to color-code repeating items — solutions,
@@ -14,4 +16,9 @@ export const BRAND_COLORS = [
 
 export function brandColor(index: number): string {
   return BRAND_COLORS[index % BRAND_COLORS.length];
+}
+
+/** Sets the per-section tint that tinted glass surfaces mix in (see globals.css). */
+export function sectionTint(color: string): CSSProperties {
+  return { ["--section-tint" as string]: color } as CSSProperties;
 }

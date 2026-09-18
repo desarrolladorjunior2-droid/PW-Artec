@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { SERVICE_OPTIONS } from "@/lib/data";
 import { SITE } from "@/lib/constants";
+import { sectionTint } from "@/lib/brand-colors";
 import { SectionPhoto } from "@/components/ui/section-photo";
 
 type FormState = {
@@ -66,9 +67,9 @@ export function Contact() {
   };
 
   return (
-    <section
+    <section style={sectionTint("var(--brand-blue)")}
       id="contact"
-      className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionPhoto
         src="/images/sections/contact.webp"
@@ -172,7 +173,7 @@ export function Contact() {
                   id="service"
                   value={form.service}
                   onChange={update("service")}
-                  className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)]"
+                  className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--field-surface)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)]"
                 >
                   {SERVICE_OPTIONS.map((option) => (
                     <option key={option} value={option}>
@@ -197,7 +198,7 @@ export function Contact() {
                   onChange={update("message")}
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? "message-error" : undefined}
-                  className="mt-2 w-full resize-none rounded-lg border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)]"
+                  className="mt-2 w-full resize-none rounded-lg border border-[var(--border)] bg-[var(--field-surface)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)]"
                 />
                 {errors.message ? (
                   <p id="message-error" className="mt-1.5 text-xs text-[var(--warning)]">
@@ -250,7 +251,7 @@ function Field({ label, id, value, onChange, type = "text", required, error }: F
         required={required}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
-        className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)]"
+        className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--field-surface)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)]"
       />
       {error ? (
         <p id={`${id}-error`} className="mt-1.5 text-xs text-[var(--warning)]">

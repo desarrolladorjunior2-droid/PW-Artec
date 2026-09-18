@@ -5,7 +5,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { ECOSYSTEM_NODES, ECOSYSTEM_STEPS } from "@/lib/data";
-import { brandColor } from "@/lib/brand-colors";
+import { brandColor, sectionTint } from "@/lib/brand-colors";
 import { SectionPhoto } from "@/components/ui/section-photo";
 
 const RADIUS = 42;
@@ -27,9 +27,9 @@ export function Ecosystem360() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section
+    <section style={sectionTint("var(--brand-green)")}
       id="impact"
-      className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionPhoto
         src="/images/sections/ecosystem.webp"
@@ -96,7 +96,7 @@ export function Ecosystem360() {
               </svg>
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-center">
+                <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full border border-[var(--border)] bg-[var(--solid-tint)] text-center">
                   <span className="font-display text-lg font-semibold text-[var(--text-primary)]">
                     ARTEC
                   </span>
@@ -125,7 +125,7 @@ export function Ecosystem360() {
                       className="flex h-16 w-16 items-center justify-center rounded-full border-2 text-xs font-semibold transition-colors duration-300 sm:h-20 sm:w-20 sm:text-sm"
                       style={{
                         borderColor: color,
-                        backgroundColor: isActive ? color : "var(--surface)",
+                        backgroundColor: isActive ? color : "var(--solid-tint)",
                         color: isActive ? "var(--accent-foreground)" : "var(--text-primary)",
                       }}
                     >
@@ -191,7 +191,7 @@ export function Ecosystem360() {
               {ECOSYSTEM_STEPS.map((step, i) => (
                 <li key={step.label} className="flex items-center">
                   <Reveal delay={i * 0.04} className="flex items-center">
-                    <span className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-xs font-medium whitespace-nowrap text-[var(--text-primary)] sm:text-sm">
+                    <span className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--solid-tint)] px-4 py-2 text-xs font-medium whitespace-nowrap text-[var(--text-primary)] sm:text-sm">
                       <span className="text-[var(--text-muted)]">
                         {String(i + 1).padStart(2, "0")}
                       </span>

@@ -1,13 +1,14 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { CircuitVisual } from "@/components/ui/circuit-visual";
+import { sectionTint } from "@/lib/brand-colors";
 import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Introduction() {
   return (
-    <section
+    <section style={sectionTint("var(--brand-blue)")}
       aria-labelledby="introduction-heading"
-      className="relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionPhoto
         src="/images/sections/introduction.webp"
