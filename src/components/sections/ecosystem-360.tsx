@@ -31,7 +31,7 @@ export function Ecosystem360() {
       id="impact"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-green)", "var(--brand-blue)"]} />
+      <SectionMesh colors={["var(--bg-cyan)", "var(--bg-violet)"]} />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="ARTEC 360°"

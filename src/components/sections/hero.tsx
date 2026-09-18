@@ -24,6 +24,20 @@ const MARQUEE_ITEMS = [
   "CONVERSIÓN",
 ];
 
+// Abstract, unlabeled node network for the hero backdrop only — echoes the
+// ecosystem concept visually without duplicating the "El ecosistema" card.
+const HERO_NODES = [
+  { x: 10, y: 14 }, { x: 26, y: 6 }, { x: 40, y: 20 }, { x: 20, y: 34 },
+  { x: 48, y: 42 }, { x: 62, y: 12 }, { x: 74, y: 30 }, { x: 88, y: 18 },
+  { x: 8, y: 58 }, { x: 30, y: 66 }, { x: 55, y: 72 }, { x: 78, y: 60 },
+  { x: 92, y: 78 },
+];
+
+const HERO_LINES: Array<[number, number]> = [
+  [0, 1], [1, 2], [2, 3], [0, 3], [2, 4], [4, 5], [5, 6], [6, 7],
+  [3, 8], [8, 9], [4, 9], [9, 10], [10, 11], [6, 11], [11, 12],
+];
+
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
 
@@ -32,17 +46,49 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden pt-32 pb-0 md:pt-40"
     >
-      {/* Light vignette + blur so the headline stays legible while the
-          video reads through clearly rather than sitting behind a flat
-          panel. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 backdrop-blur-[3px]"
-        style={{
-          background:
-            "radial-gradient(ellipse 68% 65% at 28% 38%, color-mix(in srgb, var(--background) 58%, transparent) 0%, color-mix(in srgb, var(--background) 34%, transparent) 50%, transparent 78%)",
-        }}
-      />
+      {/* Decorative hero backdrop: soft color glows + an abstract node
+          network, with a light vignette so the headline stays legible. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute -left-16 -top-24 h-[28rem] w-[28rem] rounded-full opacity-[0.16] blur-[100px]"
+          style={{ background: "var(--bg-blue)" }}
+        />
+        <div
+          className="absolute -right-10 top-10 h-[24rem] w-[24rem] rounded-full opacity-[0.14] blur-[100px]"
+          style={{ background: "var(--bg-violet)" }}
+        />
+        <div
+          className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full opacity-[0.1] blur-[90px]"
+          style={{ background: "var(--bg-cyan)" }}
+        />
+        <svg
+          className="absolute inset-0 h-full w-full opacity-[0.07]"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {HERO_LINES.map(([a, b], i) => (
+            <line
+              key={i}
+              x1={HERO_NODES[a].x}
+              y1={HERO_NODES[a].y}
+              x2={HERO_NODES[b].x}
+              y2={HERO_NODES[b].y}
+              stroke="var(--text-secondary)"
+              strokeWidth={0.15}
+            />
+          ))}
+          {HERO_NODES.map((node, i) => (
+            <circle key={i} cx={node.x} cy={node.y} r={0.55} fill="var(--text-secondary)" />
+          ))}
+        </svg>
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 68% 65% at 28% 38%, color-mix(in srgb, var(--background) 46%, transparent) 0%, color-mix(in srgb, var(--background) 26%, transparent) 50%, transparent 78%)",
+          }}
+        />
+      </div>
 
       <div className="container-artec grid items-center gap-16 pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 md:pb-28">
         <div>

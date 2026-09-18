@@ -16,7 +16,7 @@ export function Metrics() {
       aria-label="Escala operativa de ARTEC"
       className="relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl"
     >
-      <SectionMesh colors={["var(--brand-blue)", "var(--brand-green)"]} />
+      <SectionMesh colors={["var(--bg-blue)", "var(--bg-cyan)"]} />
       {!prefersReducedMotion ? (
         <motion.div
           aria-hidden="true"

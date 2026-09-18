@@ -9,7 +9,7 @@ export function Introduction() {
       aria-labelledby="introduction-heading"
       className="relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-blue)", "var(--brand-indigo)"]} />
+      <SectionMesh colors={["var(--bg-blue)", "var(--bg-violet)"]} />
       <div className="container-artec relative grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
         <div id="introduction-heading">
           <SectionHeading

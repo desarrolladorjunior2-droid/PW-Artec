@@ -9,7 +9,7 @@ export function CaseStudy() {
       aria-labelledby="case-study-heading"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-red)", "var(--brand-green)"]} />
+      <SectionMesh colors={["var(--bg-magenta)", "var(--bg-cyan)"]} />
       <div className="container-artec relative">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>

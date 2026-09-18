@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { VideoBackground } from "@/components/layout/video-background";
+import { AmbientBackground } from "@/components/layout/ambient-background";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
 
@@ -117,7 +117,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <a href="#main" className="skip-link">
             Saltar al contenido
           </a>
-          <VideoBackground />
+          <AmbientBackground />
           <div className="relative z-10 flex min-h-full flex-1 flex-col">
             {children}
           </div>
