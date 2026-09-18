@@ -12,11 +12,11 @@ export function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section style={sectionTint("var(--brand-orange)")}
+    <section style={sectionTint("var(--tint-solutions)")}
       id="solutions"
       className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionVideo name="solutions" tint="var(--brand-orange)" />
+      <SectionVideo name="solutions" tint="var(--tint-solutions)" />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Soluciones"

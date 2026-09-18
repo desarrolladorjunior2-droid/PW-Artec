@@ -100,8 +100,12 @@
 :root {
   --tint-pct: 13%;
   --photo-brightness: 1;
-  --video-veil-pct: 40%;
+  --video-veil-pct: 56%;
   --video-brightness: 1;
+  --tint-solutions: var(--brand-orange);
+  --tint-intro: var(--brand-blue);
+  --motion-veil-pct: 72%;
+  --motion-orb-opacity: 0.5;
   --veil-pct: 92%;
   --wash-pct: 15%;
 }
@@ -111,8 +115,12 @@
   --veil-pct: 96%;
   --wash-pct: 8%;
   --photo-brightness: 0.5;
-  --video-veil-pct: 82%;
-  --video-brightness: 0.55;
+  --video-veil-pct: 78%;
+  --video-brightness: 0.75;
+  --tint-solutions: #6f7dff;
+  --tint-intro: #8a63ff;
+  --motion-veil-pct: 82%;
+  --motion-orb-opacity: 0.6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -121,8 +129,12 @@
   --veil-pct: 96%;
   --wash-pct: 8%;
   --photo-brightness: 0.5;
-  --video-veil-pct: 82%;
-  --video-brightness: 0.55;
+  --video-veil-pct: 78%;
+  --video-brightness: 0.75;
+  --tint-solutions: #6f7dff;
+  --tint-intro: #8a63ff;
+  --motion-veil-pct: 82%;
+  --motion-orb-opacity: 0.6;
   }
 }
 
@@ -278,6 +290,47 @@
   }
 }
 
+.motion-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: var(--motion-orb-opacity);
+  will-change: transform;
+}
+
+.motion-bubble {
+  position: absolute;
+  bottom: -40px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-radius: 9999px;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@keyframes motion-drift-a {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(14%, 18%) scale(1.15); }
+}
+
+@keyframes motion-drift-b {
+  from { transform: translate(0, 0) scale(1.05); }
+  to { transform: translate(-16%, 12%) scale(0.9); }
+}
+
+@keyframes motion-drift-c {
+  from { transform: translate(0, 0) scale(0.95); }
+  to { transform: translate(-10%, -18%) scale(1.15); }
+}
+
+@keyframes motion-rise {
+  0% { transform: translate(0, 0); opacity: 0; }
+  12% { opacity: 0.75; }
+  50% { transform: translate(22px, -300px); }
+  88% { opacity: 0.6; }
+  100% { transform: translate(-14px, -640px); opacity: 0; }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -325,6 +378,6 @@
     --video-veil-pct: 66%;
   }
   :root[data-theme="dark"] {
-    --video-veil-pct: 88%;
+    --video-veil-pct: 80%;
   }
 }

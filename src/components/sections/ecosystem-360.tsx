@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { ECOSYSTEM_NODES, ECOSYSTEM_STEPS } from "@/lib/data";
 import { brandColor, sectionTint } from "@/lib/brand-colors";
-import { SectionPhoto } from "@/components/ui/section-photo";
+import { SectionMotion } from "@/components/ui/section-motion";
 
 const RADIUS = 42;
 
@@ -31,10 +31,7 @@ export function Ecosystem360() {
       id="impact"
       className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionPhoto
-        src="/images/sections/ecosystem.webp"
-        colors={["var(--brand-green)", "var(--brand-blue)"]}
-      />
+      <SectionMotion tint="var(--brand-green)" />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="ARTEC 360°"
@@ -48,7 +45,7 @@ export function Ecosystem360() {
             <div
               role="group"
               aria-label="Explorador del ecosistema ARTEC 360"
-              className="relative mx-auto aspect-square w-full max-w-md"
+              className="relative mx-auto aspect-square w-full max-w-lg"
             >
               <motion.div
                 aria-hidden="true"
@@ -96,11 +93,11 @@ export function Ecosystem360() {
               </svg>
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full border border-[var(--border)] bg-[var(--solid-tint)] text-center">
-                  <span className="font-display text-lg font-semibold text-[var(--text-primary)]">
+                <div className="flex h-32 w-32 flex-col items-center justify-center rounded-full border border-[var(--border)] bg-[var(--solid-tint)] text-center">
+                  <span className="font-display text-xl font-semibold text-[var(--text-primary)]">
                     ARTEC
                   </span>
-                  <span className="text-[10px] font-semibold tracking-[0.18em]" style={{ color: activeColor }}>
+                  <span className="text-xs font-semibold tracking-[0.18em]" style={{ color: activeColor }}>
                     360°
                   </span>
                 </div>
@@ -122,7 +119,7 @@ export function Ecosystem360() {
                     }`}
                   >
                     <span
-                      className="flex h-16 w-16 items-center justify-center rounded-full border-2 text-xs font-semibold transition-colors duration-300 sm:h-20 sm:w-20 sm:text-sm"
+                      className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 text-[13px] font-semibold transition-colors duration-300 sm:h-24 sm:w-24 sm:text-base"
                       style={{
                         borderColor: color,
                         backgroundColor: isActive ? color : "var(--solid-tint)",
@@ -148,10 +145,10 @@ export function Ecosystem360() {
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: activeColor }}>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em]" style={{ color: activeColor }}>
                     {active.label}
                   </p>
-                  <p className="mt-4 text-balance font-display text-xl font-medium leading-snug text-[var(--text-primary)] md:text-2xl">
+                  <p className="mt-4 text-balance font-display text-xl font-medium leading-snug text-[var(--text-primary)] md:text-[1.7rem]">
                     {active.description}
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
@@ -165,7 +162,7 @@ export function Ecosystem360() {
                           key={id}
                           type="button"
                           onClick={() => setActiveId(id)}
-                          className="rounded-full border px-4 py-1.5 text-xs font-medium transition-colors"
+                          className="rounded-full border px-5 py-2 text-sm font-medium transition-colors"
                           style={{ borderColor: connectedColor, color: connectedColor }}
                         >
                           Conecta con {connected.label}
@@ -182,32 +179,34 @@ export function Ecosystem360() {
         {/* Linear funnel */}
         <div className="mt-24">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
               El recorrido completo
             </p>
           </Reveal>
-          <div className="mt-8 overflow-x-auto pb-4">
-            <ol className="flex min-w-max gap-0 lg:min-w-0 lg:flex-wrap">
-              {ECOSYSTEM_STEPS.map((step, i) => (
-                <li key={step.label} className="flex items-center">
-                  <Reveal delay={i * 0.04} className="flex items-center">
-                    <span className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--solid-tint)] px-4 py-2 text-xs font-medium whitespace-nowrap text-[var(--text-primary)] sm:text-sm">
-                      <span className="text-[var(--text-muted)]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+          <ol className="relative mt-10 grid grid-cols-3 gap-x-4 gap-y-10 lg:grid-cols-9 lg:gap-x-2">
+            <span
+              aria-hidden="true"
+              className="absolute left-[5.5%] right-[5.5%] top-7 hidden h-px bg-[var(--text-muted)]/40 lg:block"
+            />
+            {ECOSYSTEM_STEPS.map((step, i) => {
+              const color = brandColor(i);
+              return (
+                <li key={step.label} className="relative flex flex-col items-center text-center">
+                  <Reveal delay={i * 0.05} className="flex flex-col items-center">
+                    <span
+                      className="flex h-14 w-14 items-center justify-center rounded-full border-2 bg-[var(--solid-tint)] font-mono text-base font-semibold"
+                      style={{ borderColor: color, color }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="mt-3 text-base font-medium leading-tight text-[var(--text-primary)]">
                       {step.short}
                     </span>
                   </Reveal>
-                  {i < ECOSYSTEM_STEPS.length - 1 ? (
-                    <span
-                      aria-hidden="true"
-                      className="mx-2 h-px w-6 shrink-0 bg-[var(--border)] sm:w-8"
-                    />
-                  ) : null}
                 </li>
-              ))}
-            </ol>
-          </div>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>
