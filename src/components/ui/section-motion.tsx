@@ -42,6 +42,26 @@ const BUBBLES = [
 export function SectionMotion({ tint, seed = 0, strong = false }: SectionMotionProps) {
   const mirror = seed % 2 === 1;
   const col = (i: number) => PALETTE[(i + seed) % PALETTE.length];
+  const bubbles = (
+    <>
+      {BUBBLES.map((b, i) => (
+        <span
+          key={i}
+          className={`motion-bubble ${i % 3 === 2 ? "hidden sm:block" : ""}`}
+          style={{
+            left: `${mirror ? 100 - b.left : b.left}%`,
+            width: b.size * 2.2,
+            height: b.size * 2.2,
+            borderColor: col(i + 2),
+            background: `color-mix(in srgb, ${col(i + 2)} 30%, transparent)`,
+            boxShadow: `0 0 22px color-mix(in srgb, ${col(i + 2)} 55%, transparent)`,
+            animation: `motion-rise ${b.dur}s linear ${b.delay}s infinite`,
+          }}
+        />
+      ))}
+    </>
+  );
+
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
       {ORBS.map((o, i) => (
@@ -58,20 +78,6 @@ export function SectionMotion({ tint, seed = 0, strong = false }: SectionMotionP
           }}
         />
       ))}
-      {BUBBLES.map((b, i) => (
-        <span
-          key={i}
-          className={`motion-bubble ${i % 3 === 2 ? "hidden sm:block" : ""}`}
-          style={{
-            left: `${mirror ? 100 - b.left : b.left}%`,
-            width: b.size * 1.5,
-            height: b.size * 1.5,
-            borderColor: col(i + 2),
-            background: `color-mix(in srgb, ${col(i + 2)} 34%, transparent)`,
-            animation: `motion-rise ${b.dur}s linear ${b.delay}s infinite`,
-          }}
-        />
-      ))}
       <div
         className="absolute inset-0"
         style={{
@@ -80,6 +86,8 @@ export function SectionMotion({ tint, seed = 0, strong = false }: SectionMotionP
             : `linear-gradient(90deg, color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) min(92%, calc(var(--motion-veil-pct) + 30%)), transparent) 0%, color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) min(92%, calc(var(--motion-veil-pct) + 22%)), transparent) 45%, color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) calc(var(--motion-veil-pct) - 8%), transparent) 100%)`,
         }}
       />
+      {strong ? bubbles : null}
+      {strong ? null : bubbles}
     </div>
   );
 }

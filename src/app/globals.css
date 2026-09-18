@@ -103,7 +103,7 @@
   --video-veil-pct: 56%;
   --video-brightness: 1;
   --tint-solutions: var(--brand-orange);
-  --tint-intro: var(--brand-blue);
+  --tint-intro: #5f7fb8;
   --motion-veil-pct: 50%;
   --motion-orb-opacity: 0.8;
   --veil-pct: 92%;
@@ -118,7 +118,7 @@
   --video-veil-pct: 78%;
   --video-brightness: 0.75;
   --tint-solutions: #6f7dff;
-  --tint-intro: #8a63ff;
+  --tint-intro: #6f7dff;
   --motion-veil-pct: 54%;
   --motion-orb-opacity: 0.85;
 }
@@ -132,7 +132,7 @@
   --video-veil-pct: 78%;
   --video-brightness: 0.75;
   --tint-solutions: #6f7dff;
-  --tint-intro: #8a63ff;
+  --tint-intro: #6f7dff;
   --motion-veil-pct: 54%;
   --motion-orb-opacity: 0.85;
   }
@@ -301,7 +301,7 @@
 .motion-bubble {
   position: absolute;
   bottom: -40px;
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
   border-radius: 9999px;
   opacity: 0;
@@ -370,6 +370,14 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .motion-bubble {
+    zoom: 0.6;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 }
 
