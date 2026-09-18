@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { MetricCounter } from "@/components/ui/metric-counter";
 import { Reveal } from "@/components/ui/reveal";
 import { METRICS } from "@/lib/data";
+import { brandColor } from "@/lib/brand-colors";
 
 export function Metrics() {
   const prefersReducedMotion = useReducedMotion();
@@ -28,8 +29,11 @@ export function Metrics() {
       <div className="container-artec grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-4 md:py-20">
         {METRICS.map((metric, i) => (
           <Reveal key={metric.label} delay={i * 0.08}>
-            <div className="border-l border-[var(--border)] pl-5">
-              <p className="font-mono text-4xl font-semibold tracking-tight text-[var(--text-primary)] md:text-5xl">
+            <div className="border-l-4 pl-5" style={{ borderColor: brandColor(i) }}>
+              <p
+                className="font-mono text-4xl font-semibold tracking-tight md:text-5xl"
+                style={{ color: brandColor(i) }}
+              >
                 {metric.numeric ? (
                   <MetricCounter
                     numeric={metric.numeric}

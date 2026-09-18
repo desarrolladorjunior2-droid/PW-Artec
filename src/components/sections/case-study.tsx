@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/ui/reveal";
 import { CASE_STUDY } from "@/lib/data";
+import { brandColor } from "@/lib/brand-colors";
 
 export function CaseStudy() {
   return (
@@ -48,7 +49,8 @@ export function CaseStudy() {
               >
                 <span
                   aria-hidden="true"
-                  className="absolute -left-[calc(2rem+5px)] top-1 h-2.5 w-2.5 rounded-full border-2 border-[var(--surface)] bg-[var(--accent)]"
+                  className="absolute -left-[calc(2rem+5px)] top-1 h-2.5 w-2.5 rounded-full border-2 border-[var(--surface)]"
+                  style={{ backgroundColor: brandColor(i) }}
                 />
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                   {String(i + 1).padStart(2, "0")} — {step.label}

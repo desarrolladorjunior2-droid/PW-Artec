@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { brandColor } from "@/lib/brand-colors";
 
 const HUB = { x: 220, y: 150 };
 
@@ -48,7 +49,7 @@ export function CircuitVisual({ className = "" }: { className?: string }) {
           cy={node.y}
           r={5}
           fill="var(--surface)"
-          stroke="var(--accent)"
+          stroke={brandColor(i)}
           strokeWidth={1.5}
           initial={{ scale: 0, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -65,7 +66,7 @@ export function CircuitVisual({ className = "" }: { className?: string }) {
               cy={node.y}
               r={5}
               fill="none"
-              stroke="var(--accent)"
+              stroke={brandColor(i)}
               strokeWidth={1}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: [0, 0.6, 0] , scale: [1, 2.6, 2.6]}}

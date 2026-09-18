@@ -5,6 +5,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { ECOSYSTEM_NODES, ECOSYSTEM_STEPS } from "@/lib/data";
+import { brandColor } from "@/lib/brand-colors";
 
 const RADIUS = 42;
 
@@ -21,6 +22,7 @@ export function Ecosystem360() {
   const active = ECOSYSTEM_NODES.find((n) => n.id === activeId)!;
   const activeIndex = ECOSYSTEM_NODES.findIndex((n) => n.id === activeId);
   const activePos = NODE_POSITIONS[activeIndex];
+  const activeColor = brandColor(activeIndex);
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -66,7 +68,7 @@ export function Ecosystem360() {
                       y1={50}
                       x2={pos.left}
                       y2={pos.top}
-                      stroke={isActiveLine ? "var(--accent)" : "var(--border)"}
+                      stroke={isActiveLine ? brandColor(i) : "var(--border)"}
                       strokeWidth={isActiveLine ? 0.5 : 0.3}
                       style={{ transition: "stroke 0.3s ease" }}
                     />
@@ -76,7 +78,7 @@ export function Ecosystem360() {
                   <motion.circle
                     key={activeId}
                     r={1.4}
-                    fill="var(--accent)"
+                    fill={activeColor}
                     initial={{ cx: 50, cy: 50, opacity: 0 }}
                     animate={{
                       cx: [50, activePos.left],
@@ -93,7 +95,7 @@ export function Ecosystem360() {
                   <span className="font-display text-lg font-semibold text-[var(--text-primary)]">
                     ARTEC
                   </span>
-                  <span className="text-[10px] font-semibold tracking-[0.18em] text-[var(--accent)]">
+                  <span className="text-[10px] font-semibold tracking-[0.18em]" style={{ color: activeColor }}>
                     360°
                   </span>
                 </div>
@@ -102,6 +104,7 @@ export function Ecosystem360() {
               {ECOSYSTEM_NODES.map((node, i) => {
                 const pos = NODE_POSITIONS[i];
                 const isActive = node.id === activeId;
+                const color = brandColor(i);
                 return (
                   <button
                     key={node.id}
@@ -114,11 +117,12 @@ export function Ecosystem360() {
                     }`}
                   >
                     <span
-                      className={`flex h-16 w-16 items-center justify-center rounded-full border text-xs font-semibold transition-colors duration-300 sm:h-20 sm:w-20 sm:text-sm ${
-                        isActive
-                          ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--accent-foreground)]"
-                          : "border-[var(--border)] bg-[var(--surface)] text-[var(--text-primary)] hover:border-[var(--accent)]"
-                      }`}
+                      className="flex h-16 w-16 items-center justify-center rounded-full border-2 text-xs font-semibold transition-colors duration-300 sm:h-20 sm:w-20 sm:text-sm"
+                      style={{
+                        borderColor: color,
+                        backgroundColor: isActive ? color : "var(--surface)",
+                        color: isActive ? "var(--accent-foreground)" : "var(--text-primary)",
+                      }}
                     >
                       {node.label}
                     </span>
@@ -139,7 +143,7 @@ export function Ecosystem360() {
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: activeColor }}>
                     {active.label}
                   </p>
                   <p className="mt-4 text-balance font-display text-xl font-medium leading-snug text-[var(--text-primary)] md:text-2xl">
@@ -147,14 +151,17 @@ export function Ecosystem360() {
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {active.connections.map((id) => {
-                      const connected = ECOSYSTEM_NODES.find((n) => n.id === id);
+                      const connectedIndex = ECOSYSTEM_NODES.findIndex((n) => n.id === id);
+                      const connected = ECOSYSTEM_NODES[connectedIndex];
                       if (!connected) return null;
+                      const connectedColor = brandColor(connectedIndex);
                       return (
                         <button
                           key={id}
                           type="button"
                           onClick={() => setActiveId(id)}
-                          className="rounded-full border border-[var(--border)] px-4 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                          className="rounded-full border px-4 py-1.5 text-xs font-medium transition-colors"
+                          style={{ borderColor: connectedColor, color: connectedColor }}
                         >
                           Conecta con {connected.label}
                         </button>
