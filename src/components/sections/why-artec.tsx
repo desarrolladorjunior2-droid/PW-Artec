@@ -7,7 +7,7 @@ import { SectionMesh } from "@/components/ui/section-mesh";
 export function WhyArtec() {
   return (
     <section className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
-      <SectionMesh colors={["var(--bg-blue)", "var(--bg-purple)"]} />
+      <SectionMesh colors={["var(--brand-blue)", "var(--brand-orange)"]} />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Por qué ARTEC"

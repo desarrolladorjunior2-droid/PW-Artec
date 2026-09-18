@@ -10,7 +10,7 @@ export function Capabilities() {
       id="capabilities"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--bg-violet)", "var(--bg-purple)"]} />
+      <SectionMesh colors={["var(--brand-indigo)", "var(--brand-orange)"]} />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Capacidades"

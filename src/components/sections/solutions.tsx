@@ -16,7 +16,7 @@ export function Solutions() {
       id="solutions"
       className="relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--bg-purple)", "var(--bg-magenta)"]} />
+      <SectionMesh colors={["var(--brand-orange)", "var(--brand-red)"]} />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Soluciones"

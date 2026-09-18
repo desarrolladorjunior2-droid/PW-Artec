@@ -19,16 +19,8 @@
   --success: #2f9e58;
   --warning: #b8791c;
   --shadow-color: 140 10% 10%;
-  /* Ambient background palette (distinct from --brand-* which drives UI
-     accents on cards/borders). Used only by the ambient background system:
-     soft light fields in light mode, glowing fields in dark mode. */
-  --bg-blue: #2563eb;
-  --bg-cyan: #0891b2;
-  --bg-violet: #7c3aed;
-  --bg-purple: #9333ea;
-  --bg-magenta: #c026d3;
-  --bg-field-opacity: 0.09;
-  --bg-network-opacity: 0.05;
+  --scrim-top: rgba(14, 22, 15, 0.26);
+  --scrim-bottom: rgba(14, 22, 15, 0.4);
 }
 
 :root[data-theme="dark"] {
@@ -49,13 +41,8 @@
   --brand-green: #4ade80;
   --success: #55c37f;
   --warning: #e0a94a;
-  --bg-blue: #3b82f6;
-  --bg-cyan: #22d3ee;
-  --bg-violet: #8b5cf6;
-  --bg-purple: #a855f7;
-  --bg-magenta: #e879f9;
-  --bg-field-opacity: 0.2;
-  --bg-network-opacity: 0.09;
+  --scrim-top: rgba(10, 16, 10, 0.35);
+  --scrim-bottom: rgba(10, 16, 10, 0.52);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -77,13 +64,8 @@
     --brand-green: #4ade80;
     --success: #55c37f;
     --warning: #e0a94a;
-    --bg-blue: #3b82f6;
-    --bg-cyan: #22d3ee;
-    --bg-violet: #8b5cf6;
-    --bg-purple: #a855f7;
-    --bg-magenta: #e879f9;
-    --bg-field-opacity: 0.2;
-    --bg-network-opacity: 0.09;
+    --scrim-top: rgba(10, 16, 10, 0.35);
+    --scrim-bottom: rgba(10, 16, 10, 0.52);
   }
 }
 
@@ -103,11 +85,6 @@
   --color-brand-orange: var(--brand-orange);
   --color-brand-red: var(--brand-red);
   --color-brand-green: var(--brand-green);
-  --color-bg-blue: var(--bg-blue);
-  --color-bg-cyan: var(--bg-cyan);
-  --color-bg-violet: var(--bg-violet);
-  --color-bg-purple: var(--bg-purple);
-  --color-bg-magenta: var(--bg-magenta);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --font-sans: var(--font-jakarta);
@@ -116,7 +93,7 @@
   --animate-marquee: marquee 36s linear infinite;
 }
 
-/* Translucent "glass" surfaces that sit above the fixed ambient background.
+/* Translucent "glass" surfaces that sit above the fixed video background.
    Defined once from --surface/--background so they auto-adapt per theme. */
 :root {
   --surface-glass: color-mix(in srgb, var(--surface) 85%, transparent);
@@ -243,29 +220,27 @@
     animation: signal-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
-  .ambient-backdrop {
+  .video-backdrop {
     position: fixed;
     inset: 0;
     z-index: 0;
     overflow: hidden;
-    background: var(--background);
-    transition: background-color 0.4s ease;
   }
 
-  .ambient-field {
+  .video-backdrop video,
+  .video-backdrop .video-poster {
     position: absolute;
-    border-radius: 9999px;
-    filter: blur(90px);
-    opacity: var(--bg-field-opacity);
-    will-change: transform;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
-  .ambient-particle {
+  .video-backdrop .video-scrim {
     position: absolute;
-    border-radius: 9999px;
-    background: var(--bg-cyan);
-    opacity: 0.35;
-    animation: particle-float 14s ease-in-out infinite;
+    inset: 0;
+    background: linear-gradient(180deg, var(--scrim-top), var(--scrim-bottom));
+    transition: background 0.4s ease;
   }
 }
 
@@ -293,50 +268,6 @@
 @keyframes dash-draw {
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes field-drift-a {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(4%, 6%) scale(1.08);
-  }
-}
-
-@keyframes field-drift-b {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-5%, -4%) scale(1.05);
-  }
-}
-
-@keyframes particle-float {
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.15;
-  }
-  50% {
-    transform: translateY(-26px) translateX(10px);
-    opacity: 0.4;
-  }
-}
-
-@media (max-width: 640px) {
-  :root {
-    /* Lighter, cheaper ambient background on small screens: less blur
-       work and a quieter network texture, per the performance brief. */
-    --bg-network-opacity: 0.04;
-  }
-
-  .ambient-field {
-    filter: blur(60px);
   }
 }
 

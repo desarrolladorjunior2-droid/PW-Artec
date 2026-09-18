@@ -5,7 +5,7 @@ import { SectionMesh } from "@/components/ui/section-mesh";
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
-      <SectionMesh colors={["var(--bg-purple)", "var(--bg-cyan)"]} />
+      <SectionMesh colors={["var(--brand-indigo)", "var(--brand-green)"]} />
       <div className="container-artec relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
           <Logo />
