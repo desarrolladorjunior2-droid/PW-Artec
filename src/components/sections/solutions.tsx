@@ -6,7 +6,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SOLUTIONS } from "@/lib/data";
 import { brandColor, sectionTint } from "@/lib/brand-colors";
-import { SectionPhoto } from "@/components/ui/section-photo";
+import { SectionVideo } from "@/components/ui/section-video";
 
 export function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,10 +16,7 @@ export function Solutions() {
       id="solutions"
       className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionPhoto
-        src="/images/sections/solutions.webp"
-        colors={["var(--brand-orange)", "var(--brand-red)"]}
-      />
+      <SectionVideo name="solutions" tint="var(--brand-orange)" />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Soluciones"

@@ -100,6 +100,8 @@
 :root {
   --tint-pct: 13%;
   --photo-brightness: 1;
+  --video-veil-pct: 40%;
+  --video-brightness: 1;
   --veil-pct: 92%;
   --wash-pct: 15%;
 }
@@ -109,6 +111,8 @@
   --veil-pct: 96%;
   --wash-pct: 8%;
   --photo-brightness: 0.5;
+  --video-veil-pct: 82%;
+  --video-brightness: 0.55;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -117,6 +121,8 @@
   --veil-pct: 96%;
   --wash-pct: 8%;
   --photo-brightness: 0.5;
+  --video-veil-pct: 82%;
+  --video-brightness: 0.55;
   }
 }
 
@@ -311,5 +317,14 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --video-veil-pct: 66%;
+  }
+  :root[data-theme="dark"] {
+    --video-veil-pct: 88%;
   }
 }
