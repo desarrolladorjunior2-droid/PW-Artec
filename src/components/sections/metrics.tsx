@@ -5,6 +5,7 @@ import { MetricCounter } from "@/components/ui/metric-counter";
 import { Reveal } from "@/components/ui/reveal";
 import { METRICS } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
+import { SectionMesh } from "@/components/ui/section-mesh";
 
 export function Metrics() {
   const prefersReducedMotion = useReducedMotion();
@@ -15,6 +16,7 @@ export function Metrics() {
       aria-label="Escala operativa de ARTEC"
       className="relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl"
     >
+      <SectionMesh colors={["var(--brand-blue)", "var(--brand-green)"]} />
       {!prefersReducedMotion ? (
         <motion.div
           aria-hidden="true"
@@ -26,7 +28,7 @@ export function Metrics() {
         />
       ) : null}
 
-      <div className="container-artec grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-4 md:py-20">
+      <div className="container-artec relative grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-4 md:py-20">
         {METRICS.map((metric, i) => (
           <Reveal key={metric.label} delay={i * 0.08}>
             <div className="border-l-4 pl-5" style={{ borderColor: brandColor(i) }}>

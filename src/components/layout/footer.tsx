@@ -1,10 +1,12 @@
 import { Logo } from "@/components/ui/logo";
 import { NAV_LINKS, SITE } from "@/lib/constants";
+import { SectionMesh } from "@/components/ui/section-mesh";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
-      <div className="container-artec grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
+    <footer className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
+      <SectionMesh colors={["var(--brand-indigo)", "var(--brand-green)"]} />
+      <div className="container-artec relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
           <Logo />
           <p className="mt-5 text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -58,7 +60,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[var(--border)]">
+      <div className="relative border-t border-[var(--border)]">
         <div className="container-artec flex flex-col items-center justify-between gap-3 py-6 text-xs text-[var(--text-muted)] sm:flex-row">
           <p>© {new Date().getFullYear()} ARTEC S.A.S. Todos los derechos reservados.</p>
           <p>Bogotá D.C., Colombia</p>

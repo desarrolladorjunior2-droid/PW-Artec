@@ -1,14 +1,16 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { RadarScan } from "@/components/ui/radar-scan";
+import { SectionMesh } from "@/components/ui/section-mesh";
 
 export function About() {
   return (
     <section
       id="about"
-      className="border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <div className="container-artec grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+      <SectionMesh colors={["var(--brand-green)", "var(--brand-indigo)"]} />
+      <div className="container-artec relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
           <SectionHeading
             eyebrow="Sobre ARTEC"

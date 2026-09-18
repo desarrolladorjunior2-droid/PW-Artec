@@ -1,14 +1,16 @@
 import { Reveal } from "@/components/ui/reveal";
 import { CASE_STUDY } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
+import { SectionMesh } from "@/components/ui/section-mesh";
 
 export function CaseStudy() {
   return (
     <section
       aria-labelledby="case-study-heading"
-      className="border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <div className="container-artec">
+      <SectionMesh colors={["var(--brand-red)", "var(--brand-green)"]} />
+      <div className="container-artec relative">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
             <Reveal>

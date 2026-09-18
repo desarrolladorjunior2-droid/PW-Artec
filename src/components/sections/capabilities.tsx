@@ -2,14 +2,16 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { CAPABILITIES } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
+import { SectionMesh } from "@/components/ui/section-mesh";
 
 export function Capabilities() {
   return (
     <section
       id="capabilities"
-      className="border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <div className="container-artec">
+      <SectionMesh colors={["var(--brand-indigo)", "var(--brand-orange)"]} />
+      <div className="container-artec relative">
         <SectionHeading
           eyebrow="Capacidades"
           title="Una matriz completa de capacidad estratégica, técnica y operativa."

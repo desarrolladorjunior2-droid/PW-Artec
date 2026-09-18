@@ -1,14 +1,16 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { CircuitVisual } from "@/components/ui/circuit-visual";
+import { SectionMesh } from "@/components/ui/section-mesh";
 
 export function Introduction() {
   return (
     <section
       aria-labelledby="introduction-heading"
-      className="bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <div className="container-artec grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
+      <SectionMesh colors={["var(--brand-blue)", "var(--brand-indigo)"]} />
+      <div className="container-artec relative grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
         <div id="introduction-heading">
           <SectionHeading
             eyebrow="Qué hacemos"
