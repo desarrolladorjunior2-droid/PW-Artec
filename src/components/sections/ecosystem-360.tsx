@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { ECOSYSTEM_NODES, ECOSYSTEM_STEPS } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 const RADIUS = 42;
 
@@ -31,7 +31,10 @@ export function Ecosystem360() {
       id="impact"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-green)", "var(--brand-blue)"]} />
+      <SectionPhoto
+        src="/images/sections/ecosystem.webp"
+        colors={["var(--brand-green)", "var(--brand-blue)"]}
+      />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="ARTEC 360°"

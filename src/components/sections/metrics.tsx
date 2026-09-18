@@ -5,7 +5,7 @@ import { MetricCounter } from "@/components/ui/metric-counter";
 import { Reveal } from "@/components/ui/reveal";
 import { METRICS } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Metrics() {
   const prefersReducedMotion = useReducedMotion();
@@ -16,7 +16,10 @@ export function Metrics() {
       aria-label="Escala operativa de ARTEC"
       className="relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl"
     >
-      <SectionMesh colors={["var(--brand-blue)", "var(--brand-green)"]} />
+      <SectionPhoto
+        src="/images/sections/metrics.webp"
+        colors={["var(--brand-blue)", "var(--brand-green)"]}
+      />
       {!prefersReducedMotion ? (
         <motion.div
           aria-hidden="true"

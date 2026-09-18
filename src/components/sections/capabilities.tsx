@@ -2,7 +2,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { CAPABILITIES } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Capabilities() {
   return (
@@ -10,7 +10,10 @@ export function Capabilities() {
       id="capabilities"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-indigo)", "var(--brand-orange)"]} />
+      <SectionPhoto
+        src="/images/sections/capabilities.webp"
+        colors={["var(--brand-indigo)", "var(--brand-orange)"]}
+      />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Capacidades"

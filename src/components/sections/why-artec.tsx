@@ -2,12 +2,15 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { WHY_PILLARS } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function WhyArtec() {
   return (
     <section className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
-      <SectionMesh colors={["var(--brand-blue)", "var(--brand-orange)"]} />
+      <SectionPhoto
+        src="/images/sections/whyartec.webp"
+        colors={["var(--brand-blue)", "var(--brand-orange)"]}
+      />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Por qué ARTEC"

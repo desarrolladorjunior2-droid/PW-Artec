@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { RadarScan } from "@/components/ui/radar-scan";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function About() {
   return (
@@ -9,7 +9,10 @@ export function About() {
       id="about"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-green)", "var(--brand-indigo)"]} />
+      <SectionPhoto
+        src="/images/sections/about.webp"
+        colors={["var(--brand-green)", "var(--brand-indigo)"]}
+      />
       <div className="container-artec relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
           <SectionHeading

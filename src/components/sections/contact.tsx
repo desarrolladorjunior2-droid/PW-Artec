@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { SERVICE_OPTIONS } from "@/lib/data";
 import { SITE } from "@/lib/constants";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 type FormState = {
   name: string;
@@ -70,7 +70,10 @@ export function Contact() {
       id="contact"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-blue)", "var(--brand-red)"]} />
+      <SectionPhoto
+        src="/images/sections/contact.webp"
+        colors={["var(--brand-blue)", "var(--brand-red)"]}
+      />
       <div className="container-artec relative grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div>
           <SectionHeading

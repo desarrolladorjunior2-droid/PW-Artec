@@ -1,11 +1,14 @@
 import { Logo } from "@/components/ui/logo";
 import { NAV_LINKS, SITE } from "@/lib/constants";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
-      <SectionMesh colors={["var(--brand-indigo)", "var(--brand-green)"]} />
+      <SectionPhoto
+        src="/images/sections/footer.webp"
+        colors={["var(--brand-indigo)", "var(--brand-green)"]}
+      />
       <div className="container-artec relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
           <Logo />

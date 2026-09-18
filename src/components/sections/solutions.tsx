@@ -6,7 +6,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SOLUTIONS } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,7 +16,10 @@ export function Solutions() {
       id="solutions"
       className="relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-orange)", "var(--brand-red)"]} />
+      <SectionPhoto
+        src="/images/sections/solutions.webp"
+        colors={["var(--brand-orange)", "var(--brand-red)"]}
+      />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Soluciones"

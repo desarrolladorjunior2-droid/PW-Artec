@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/ui/reveal";
 import { CASE_STUDY } from "@/lib/data";
 import { brandColor } from "@/lib/brand-colors";
-import { SectionMesh } from "@/components/ui/section-mesh";
+import { SectionPhoto } from "@/components/ui/section-photo";
 
 export function CaseStudy() {
   return (
@@ -9,7 +9,11 @@ export function CaseStudy() {
       aria-labelledby="case-study-heading"
       className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMesh colors={["var(--brand-red)", "var(--brand-green)"]} />
+      <SectionPhoto
+        src="/images/sections/casestudy.webp"
+        colors={["var(--brand-red)", "var(--brand-green)"]}
+        position="center 65%"
+      />
       <div className="container-artec relative">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
