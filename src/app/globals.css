@@ -301,8 +301,6 @@
 .motion-bubble {
   position: absolute;
   bottom: -40px;
-  border-width: 3px;
-  border-style: solid;
   border-radius: 9999px;
   opacity: 0;
   will-change: transform, opacity;
@@ -376,7 +374,6 @@
 @media (max-width: 640px) {
   .motion-bubble {
     zoom: 0.6;
-    background: transparent !important;
     box-shadow: none !important;
   }
 }

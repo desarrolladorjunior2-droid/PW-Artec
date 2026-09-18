@@ -50,11 +50,10 @@ export function SectionMotion({ tint, seed = 0, strong = false }: SectionMotionP
           className={`motion-bubble ${i % 3 === 2 ? "hidden sm:block" : ""}`}
           style={{
             left: `${mirror ? 100 - b.left : b.left}%`,
-            width: b.size * 2.2,
-            height: b.size * 2.2,
-            borderColor: col(i + 2),
-            background: `color-mix(in srgb, ${col(i + 2)} 30%, transparent)`,
-            boxShadow: `0 0 22px color-mix(in srgb, ${col(i + 2)} 55%, transparent)`,
+            width: b.size * 1.6,
+            height: b.size * 1.6,
+            background: `radial-gradient(circle at 35% 30%, color-mix(in srgb, ${col(i + 2)} 78%, transparent), color-mix(in srgb, ${col(i + 2)} 40%, transparent) 70%)`,
+            boxShadow: `0 0 16px color-mix(in srgb, ${col(i + 2)} 35%, transparent)`,
             animation: `motion-rise ${b.dur}s linear ${b.delay}s infinite`,
           }}
         />
