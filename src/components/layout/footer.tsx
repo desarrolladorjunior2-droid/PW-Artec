@@ -1,15 +1,12 @@
 import { Logo } from "@/components/ui/logo";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { sectionTint } from "@/lib/brand-colors";
-import { SectionPhoto } from "@/components/ui/section-photo";
+import { SectionMotion } from "@/components/ui/section-motion";
 
 export function Footer() {
   return (
     <footer style={sectionTint("var(--brand-indigo)")} className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
-      <SectionPhoto
-        src="/images/sections/footer.webp"
-        colors={["var(--brand-indigo)", "var(--brand-green)"]}
-      />
+      <SectionMotion tint="var(--brand-indigo)" seed={2} strong />
       <div className="container-artec relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
           <Logo />

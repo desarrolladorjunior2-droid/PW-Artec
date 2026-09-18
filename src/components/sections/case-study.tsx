@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/ui/reveal";
 import { CASE_STUDY } from "@/lib/data";
 import { brandColor, sectionTint } from "@/lib/brand-colors";
-import { SectionPhoto } from "@/components/ui/section-photo";
+import { SectionMotion } from "@/components/ui/section-motion";
 
 export function CaseStudy() {
   return (
@@ -9,16 +9,12 @@ export function CaseStudy() {
       aria-labelledby="case-study-heading"
       className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionPhoto
-        src="/images/sections/casestudy.webp"
-        colors={["var(--brand-red)", "var(--brand-green)"]}
-        position="center 65%"
-      />
+      <SectionMotion tint="var(--brand-red)" seed={3} />
       <div className="container-artec relative">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+              <p className="w-fit rounded-full bg-[var(--surface-glass-strong)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
                 {CASE_STUDY.eyebrow}
               </p>
             </Reveal>

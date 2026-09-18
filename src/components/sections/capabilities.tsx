@@ -2,7 +2,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { CAPABILITIES } from "@/lib/data";
 import { brandColor, sectionTint } from "@/lib/brand-colors";
-import { SectionPhoto } from "@/components/ui/section-photo";
+import { SectionMotion } from "@/components/ui/section-motion";
 
 export function Capabilities() {
   return (
@@ -10,10 +10,7 @@ export function Capabilities() {
       id="capabilities"
       className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionPhoto
-        src="/images/sections/capabilities.webp"
-        colors={["var(--brand-indigo)", "var(--brand-orange)"]}
-      />
+      <SectionMotion tint="var(--brand-indigo)" seed={2} />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="Capacidades"

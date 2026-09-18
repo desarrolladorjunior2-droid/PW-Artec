@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SERVICE_OPTIONS } from "@/lib/data";
 import { SITE } from "@/lib/constants";
 import { sectionTint } from "@/lib/brand-colors";
-import { SectionPhoto } from "@/components/ui/section-photo";
+import { SectionMotion } from "@/components/ui/section-motion";
 
 type FormState = {
   name: string;
@@ -71,10 +71,7 @@ export function Contact() {
       id="contact"
       className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionPhoto
-        src="/images/sections/contact.webp"
-        colors={["var(--brand-blue)", "var(--brand-red)"]}
-      />
+      <SectionMotion tint="var(--brand-blue)" seed={6} />
       <div className="container-artec relative grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div>
           <SectionHeading

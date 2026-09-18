@@ -104,8 +104,8 @@
   --video-brightness: 1;
   --tint-solutions: var(--brand-orange);
   --tint-intro: var(--brand-blue);
-  --motion-veil-pct: 72%;
-  --motion-orb-opacity: 0.5;
+  --motion-veil-pct: 50%;
+  --motion-orb-opacity: 0.8;
   --veil-pct: 92%;
   --wash-pct: 15%;
 }
@@ -119,8 +119,8 @@
   --video-brightness: 0.75;
   --tint-solutions: #6f7dff;
   --tint-intro: #8a63ff;
-  --motion-veil-pct: 82%;
-  --motion-orb-opacity: 0.6;
+  --motion-veil-pct: 54%;
+  --motion-orb-opacity: 0.85;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -133,8 +133,8 @@
   --video-brightness: 0.75;
   --tint-solutions: #6f7dff;
   --tint-intro: #8a63ff;
-  --motion-veil-pct: 82%;
-  --motion-orb-opacity: 0.6;
+  --motion-veil-pct: 54%;
+  --motion-orb-opacity: 0.85;
   }
 }
 
@@ -293,7 +293,7 @@
 .motion-orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(70px);
+  filter: blur(56px);
   opacity: var(--motion-orb-opacity);
   will-change: transform;
 }
@@ -301,7 +301,7 @@
 .motion-bubble {
   position: absolute;
   bottom: -40px;
-  border-width: 1.5px;
+  border-width: 2px;
   border-style: solid;
   border-radius: 9999px;
   opacity: 0;
@@ -325,9 +325,9 @@
 
 @keyframes motion-rise {
   0% { transform: translate(0, 0); opacity: 0; }
-  12% { opacity: 0.75; }
+  12% { opacity: 1; }
   50% { transform: translate(22px, -300px); }
-  88% { opacity: 0.6; }
+  88% { opacity: 0.9; }
   100% { transform: translate(-14px, -640px); opacity: 0; }
 }
 
@@ -377,7 +377,11 @@
   :root {
     --video-veil-pct: 66%;
   }
+  :root {
+    --motion-veil-pct: 62%;
+  }
   :root[data-theme="dark"] {
+    --motion-veil-pct: 78%;
     --video-veil-pct: 80%;
   }
 }

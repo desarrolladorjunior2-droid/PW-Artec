@@ -1,6 +1,16 @@
 type SectionMotionProps = {
   tint: string;
+  seed?: number;
+  strong?: boolean;
 };
+
+const PALETTE = [
+  "var(--brand-blue)",
+  "var(--brand-indigo)",
+  "var(--brand-orange)",
+  "var(--brand-red)",
+  "var(--brand-green)",
+] as const;
 
 const ORBS = [
   { color: "var(--brand-blue)", size: 30, left: "-6%", top: "-20%", anim: "motion-drift-a", dur: 22 },
@@ -29,7 +39,9 @@ const BUBBLES = [
  * Living section background: slow drifting color orbs plus small bubbles
  * that rise and fade, all CSS. Frozen automatically under reduced motion.
  */
-export function SectionMotion({ tint }: SectionMotionProps) {
+export function SectionMotion({ tint, seed = 0, strong = false }: SectionMotionProps) {
+  const mirror = seed % 2 === 1;
+  const col = (i: number) => PALETTE[(i + seed) % PALETTE.length];
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
       {ORBS.map((o, i) => (
@@ -37,11 +49,11 @@ export function SectionMotion({ tint }: SectionMotionProps) {
           key={i}
           className="motion-orb"
           style={{
-            left: o.left,
+            [mirror ? "right" : "left"]: o.left,
             top: o.top,
             width: `${o.size}rem`,
             height: `${o.size}rem`,
-            background: o.color,
+            background: col(i),
             animation: `${o.anim} ${o.dur}s ease-in-out infinite alternate`,
           }}
         />
@@ -51,11 +63,11 @@ export function SectionMotion({ tint }: SectionMotionProps) {
           key={i}
           className={`motion-bubble ${i % 3 === 2 ? "hidden sm:block" : ""}`}
           style={{
-            left: `${b.left}%`,
-            width: b.size,
-            height: b.size,
-            borderColor: b.color,
-            background: `color-mix(in srgb, ${b.color} 22%, transparent)`,
+            left: `${mirror ? 100 - b.left : b.left}%`,
+            width: b.size * 1.5,
+            height: b.size * 1.5,
+            borderColor: col(i + 2),
+            background: `color-mix(in srgb, ${col(i + 2)} 34%, transparent)`,
             animation: `motion-rise ${b.dur}s linear ${b.delay}s infinite`,
           }}
         />
@@ -63,7 +75,9 @@ export function SectionMotion({ tint }: SectionMotionProps) {
       <div
         className="absolute inset-0"
         style={{
-          background: `color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) var(--motion-veil-pct), transparent)`,
+          background: strong
+            ? `color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) min(94%, calc(var(--motion-veil-pct) + 28%)), transparent)`
+            : `linear-gradient(90deg, color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) min(92%, calc(var(--motion-veil-pct) + 30%)), transparent) 0%, color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) min(92%, calc(var(--motion-veil-pct) + 22%)), transparent) 45%, color-mix(in srgb, color-mix(in srgb, ${tint} var(--tint-pct), var(--background)) calc(var(--motion-veil-pct) - 8%), transparent) 100%)`,
         }}
       />
     </div>

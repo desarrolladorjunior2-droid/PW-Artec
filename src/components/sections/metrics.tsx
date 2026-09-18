@@ -5,7 +5,7 @@ import { MetricCounter } from "@/components/ui/metric-counter";
 import { Reveal } from "@/components/ui/reveal";
 import { METRICS } from "@/lib/data";
 import { brandColor, sectionTint } from "@/lib/brand-colors";
-import { SectionPhoto } from "@/components/ui/section-photo";
+import { SectionMotion } from "@/components/ui/section-motion";
 
 export function Metrics() {
   const prefersReducedMotion = useReducedMotion();
@@ -16,10 +16,7 @@ export function Metrics() {
       aria-label="Escala operativa de ARTEC"
       className="section-tinted relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl"
     >
-      <SectionPhoto
-        src="/images/sections/metrics.webp"
-        colors={["var(--brand-blue)", "var(--brand-green)"]}
-      />
+      <SectionMotion tint="var(--brand-blue)" seed={1} strong />
       {!prefersReducedMotion ? (
         <motion.div
           aria-hidden="true"

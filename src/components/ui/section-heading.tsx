@@ -18,8 +18,8 @@ export function SectionHeading({
     <div className={align === "center" ? "text-center mx-auto max-w-2xl" : ""}>
       <Reveal>
         <p
-          className={`flex items-center gap-2.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)] ${
-            align === "center" ? "justify-center" : ""
+          className={`flex w-fit items-center gap-2.5 rounded-full bg-[var(--surface-glass-strong)] px-3 py-1 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)] ${
+            align === "center" ? "mx-auto justify-center" : ""
           }`}
         >
           <span className="relative flex h-1.5 w-1.5 shrink-0">

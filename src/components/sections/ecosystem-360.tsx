@@ -31,7 +31,7 @@ export function Ecosystem360() {
       id="impact"
       className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
-      <SectionMotion tint="var(--brand-green)" />
+      <SectionMotion tint="var(--brand-green)" seed={3} />
       <div className="container-artec relative">
         <SectionHeading
           eyebrow="ARTEC 360°"
@@ -179,7 +179,7 @@ export function Ecosystem360() {
         {/* Linear funnel */}
         <div className="mt-24">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+            <p className="w-fit rounded-full bg-[var(--surface-glass-strong)] px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)]">
               El recorrido completo
             </p>
           </Reveal>
