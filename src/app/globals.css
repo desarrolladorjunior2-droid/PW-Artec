@@ -280,6 +280,9 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: left top;
+    transform: scale(1.14);
+    transform-origin: left top;
   }
 
   .video-backdrop .video-scrim {
