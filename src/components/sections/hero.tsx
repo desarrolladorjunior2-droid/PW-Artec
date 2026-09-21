@@ -24,6 +24,29 @@ const MARQUEE_ITEMS = [
   "CONVERSIÓN",
 ];
 
+const INTRO_PARTS: { text: string; hl?: boolean }[] = [
+  { text: "Integramos " },
+  { text: "estrategia digital", hl: true },
+  { text: ", tecnología, operación de " },
+  { text: "contact center", hl: true },
+  { text: " y " },
+  { text: "ejecución territorial", hl: true },
+  { text: " para transformar oportunidades en " },
+  { text: "resultados medibles", hl: true },
+  { text: "." },
+];
+
+// Running word offset per segment so the reveal cascades across the sentence.
+const INTRO = INTRO_PARTS.reduce<{ text: string; hl?: boolean; offset: number }[]>(
+  (acc, part) => {
+    const prev = acc[acc.length - 1];
+    const offset = prev ? prev.offset + prev.text.split(/(\s+)/).length : 0;
+    acc.push({ ...part, offset });
+    return acc;
+  },
+  [],
+);
+
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
 
@@ -68,20 +91,43 @@ export function Hero() {
             Conectamos marcas, tecnología y territorios a gran escala.
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative isolate mt-7 max-w-xl text-base font-medium leading-relaxed text-[var(--text-primary)] md:text-lg"
+          <p
+            className="relative mt-7 max-w-xl text-base font-medium leading-relaxed text-[var(--text-primary)] md:text-lg"
+            style={{
+              textShadow:
+                "0 0 2px var(--background), 0 0 6px var(--background), 0 0 12px var(--background), 0 0 24px color-mix(in srgb, var(--background) 85%, transparent)",
+            }}
           >
-            <span
-              aria-hidden="true"
-              className="absolute -inset-x-6 -inset-y-4 -z-10 rounded-[2rem] bg-[color-mix(in_srgb,var(--solid-tint)_60%,transparent)] blur-2xl"
-            />
-            Integramos estrategia digital, tecnología, operación de contact
-            center y ejecución territorial para transformar oportunidades en
-            resultados medibles.
-          </motion.p>
+            {INTRO.map((seg, si) => {
+              const words = seg.text.split(/(\s+)/);
+              const nodes = words.map((w, wi) =>
+                /^\s+$/.test(w) || w === "" ? (
+                  w
+                ) : (
+                  <motion.span
+                    key={wi}
+                    className="inline-block"
+                    initial={prefersReducedMotion ? false : { opacity: 0, y: 10, filter: "blur(8px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.55, delay: 0.35 + (seg.offset + wi) * 0.035 }}
+                  >
+                    {w}
+                  </motion.span>
+                ),
+              );
+              return seg.hl ? (
+                <span
+                  key={si}
+                  className="hero-hl font-semibold"
+                  style={{ ["--hl-delay" as string]: `${1.1 + si * 0.25}s` }}
+                >
+                  {nodes}
+                </span>
+              ) : (
+                <span key={si}>{nodes}</span>
+              );
+            })}
+          </p>
 
           <motion.div
             initial={{ opacity: 0, y: 18 }}
