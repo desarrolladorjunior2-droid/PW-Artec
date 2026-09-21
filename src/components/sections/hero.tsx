@@ -32,21 +32,12 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden pt-32 pb-0 md:pt-40"
     >
-      {/* Light vignette + blur so the headline stays legible while the
-          video reads through clearly rather than sitting behind a flat
-          panel. */}
+      {/* Mobile only: a light veil so text stays readable on small screens;
+          on desktop the video is left fully visible. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 lg:hidden"
-        style={{ background: "color-mix(in srgb, var(--background) 80%, transparent)" }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 backdrop-blur-[3px]"
-        style={{
-          background:
-            "radial-gradient(ellipse 68% 65% at 28% 38%, color-mix(in srgb, var(--background) 90%, transparent) 0%, color-mix(in srgb, var(--background) 66%, transparent) 50%, transparent 78%)",
-        }}
+        style={{ background: "color-mix(in srgb, var(--background) 46%, transparent)" }}
       />
 
       <div className="container-artec grid items-center gap-16 pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 md:pb-28">
@@ -55,7 +46,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-2.5"
+            className="flex w-fit items-center gap-2.5 rounded-full bg-[color-mix(in_srgb,var(--solid-tint)_62%,transparent)] px-3.5 py-1.5"
           >
             <span className="relative flex h-1.5 w-1.5 shrink-0">
               <span className="signal-dot h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
@@ -63,7 +54,7 @@ export function Hero() {
             <ScrambleText
               text="ARTEC S.A.S. — SOLUCIONES INTEGRADAS"
               charDuration={5}
-              className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[var(--accent)]"
+              className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]"
             />
           </motion.div>
 
@@ -72,7 +63,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-balance font-display text-[2.6rem] font-medium leading-[1.05] tracking-tight text-[var(--text-primary)] sm:text-6xl lg:text-[4.2rem]"
-            style={{ textShadow: "0 2px 24px color-mix(in srgb, var(--background) 55%, transparent)" }}
+            style={{ textShadow: "0 0 26px var(--background), 0 0 8px color-mix(in srgb, var(--background) 70%, transparent)" }}
           >
             Conectamos marcas, tecnología y territorios a gran escala.
           </motion.h1>
@@ -81,8 +72,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-7 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] md:text-lg"
-            style={{ textShadow: "0 2px 18px var(--background), 0 1px 4px var(--background)" }}
+            className="-mx-4 mt-6 max-w-xl rounded-2xl bg-[color-mix(in_srgb,var(--solid-tint)_58%,transparent)] px-4 py-3 text-base font-medium leading-relaxed text-[var(--text-primary)] backdrop-blur-[3px] md:text-lg"
           >
             Integramos estrategia digital, tecnología, operación de contact
             center y ejecución territorial para transformar oportunidades en
@@ -98,7 +88,7 @@ export function Hero() {
             <MagneticCTA href="#contact" variant="primary">
               Hablemos de tu proyecto
             </MagneticCTA>
-            <MagneticCTA href="#solutions" variant="secondary">
+            <MagneticCTA href="#solutions" variant="secondary" className="!bg-[color-mix(in_srgb,var(--solid-tint)_66%,transparent)]">
               Explora nuestras soluciones
             </MagneticCTA>
           </motion.div>
@@ -109,7 +99,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
           className="glow-card relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] p-8 backdrop-blur-xl"
-          style={{ background: "color-mix(in srgb, var(--solid-tint) 92%, transparent)" }}
+          style={{ background: "color-mix(in srgb, var(--solid-tint) 72%, transparent)" }}
           aria-label="Flujo del ecosistema ARTEC"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
@@ -172,7 +162,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="mx-auto mb-10 hidden w-fit items-center gap-2 rounded-full bg-[var(--surface-glass-strong)] px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)] transition-colors hover:text-[var(--accent)] md:flex"
+        className="mx-auto mb-10 hidden w-fit items-center gap-2 rounded-full bg-[color-mix(in_srgb,var(--solid-tint)_68%,transparent)] px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-primary)] transition-colors hover:text-[var(--accent)] md:flex"
         aria-label="Desplázate para explorar"
       >
         Desplázate para explorar
@@ -181,13 +171,13 @@ export function Hero() {
 
       <div
         aria-hidden="true"
-        className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass-strong)] py-4 backdrop-blur-md"
+        className="relative overflow-hidden border-t border-[var(--border)] bg-[color-mix(in_srgb,var(--solid-tint)_64%,transparent)] py-4 backdrop-blur-sm"
       >
         <div className={`flex w-max ${prefersReducedMotion ? "" : "animate-marquee"}`}>
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
             <span
               key={i}
-              className="flex items-center gap-3 pr-10 font-mono text-xs tracking-[0.2em] text-[var(--text-muted)]"
+              className="flex items-center gap-3 pr-10 font-mono text-xs font-medium tracking-[0.2em] text-[var(--text-primary)]"
             >
               {item}
               <span className="text-[var(--accent)]">•</span>

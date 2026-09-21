@@ -5,6 +5,7 @@ import { Metrics } from "@/components/sections/metrics";
 import { Introduction } from "@/components/sections/introduction";
 import { Solutions } from "@/components/sections/solutions";
 import { Ecosystem360 } from "@/components/sections/ecosystem-360";
+import { Gallery } from "@/components/sections/gallery";
 import { Capabilities } from "@/components/sections/capabilities";
 import { CaseStudy } from "@/components/sections/case-study";
 import { WhyArtec } from "@/components/sections/why-artec";
@@ -21,6 +22,7 @@ export default function Home() {
         <Introduction />
         <Solutions />
         <Ecosystem360 />
+        <Gallery />
         <Capabilities />
         <CaseStudy />
         <WhyArtec />
