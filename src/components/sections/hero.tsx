@@ -72,8 +72,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="-mx-4 mt-6 max-w-xl rounded-2xl bg-[color-mix(in_srgb,var(--solid-tint)_58%,transparent)] px-4 py-3 text-base font-medium leading-relaxed text-[var(--text-primary)] backdrop-blur-[3px] md:text-lg"
+            className="relative isolate mt-7 max-w-xl text-base font-medium leading-relaxed text-[var(--text-primary)] md:text-lg"
           >
+            <span
+              aria-hidden="true"
+              className="absolute -inset-x-6 -inset-y-4 -z-10 rounded-[2rem] bg-[color-mix(in_srgb,var(--solid-tint)_60%,transparent)] blur-2xl"
+            />
             Integramos estrategia digital, tecnología, operación de contact
             center y ejecución territorial para transformar oportunidades en
             resultados medibles.
