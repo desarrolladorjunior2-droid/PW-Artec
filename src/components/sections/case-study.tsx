@@ -6,6 +6,7 @@ import { SectionMotion } from "@/components/ui/section-motion";
 export function CaseStudy() {
   return (
     <section style={sectionTint("var(--brand-red)")}
+      id="case-study"
       aria-labelledby="case-study-heading"
       className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
