@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
+import { brandColor } from "@/lib/brand-colors";
 import { ScrambleText } from "@/components/ui/scramble-text";
 
 const FLOW_STEPS = [
@@ -46,6 +47,10 @@ const INTRO = INTRO_PARTS.reduce<{ text: string; hl?: boolean; offset: number }[
   },
   [],
 );
+
+// Layered halo in the page background color: keeps floating text legible over the video without a box.
+const HALO =
+  "0 0 1px var(--background), 0 0 3px var(--background), 0 0 6px var(--background), 0 0 10px var(--background), 0 0 16px var(--background), 0 0 28px color-mix(in srgb, var(--background) 85%, transparent)";
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -93,10 +98,7 @@ export function Hero() {
 
           <p
             className="relative mt-7 max-w-xl text-base font-medium leading-relaxed text-[var(--text-primary)] md:text-lg"
-            style={{
-              textShadow:
-                "0 0 2px var(--background), 0 0 6px var(--background), 0 0 12px var(--background), 0 0 24px color-mix(in srgb, var(--background) 85%, transparent)",
-            }}
+            style={{ textShadow: HALO }}
           >
             {INTRO.map((seg, si) => {
               const words = seg.text.split(/(\s+)/);
@@ -148,36 +150,22 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="glow-card relative mx-auto w-full max-w-sm rounded-2xl border border-[var(--border)] p-8 backdrop-blur-xl"
-          style={{ background: "color-mix(in srgb, var(--solid-tint) 72%, transparent)" }}
+          className="relative mx-auto w-full max-w-sm p-8"
+          style={{ textShadow: HALO }}
           aria-label="Flujo del ecosistema ARTEC"
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-            e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`);
-          }}
         >
-          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-primary)]">
             El ecosistema
           </p>
-          <div className="relative mt-6 pl-6">
+          <div className="relative mt-6 pl-7">
             <div
               aria-hidden="true"
-              className="absolute left-[5px] top-1 bottom-1 w-px bg-[var(--border)]"
+              className="absolute left-[5px] top-1 bottom-1 w-[2px] rounded-full opacity-70"
+              style={{
+                background:
+                  "linear-gradient(to bottom, var(--brand-blue), var(--brand-indigo), var(--brand-orange), var(--brand-red), var(--brand-green))",
+              }}
             />
-            {!prefersReducedMotion ? (
-              <motion.div
-                aria-hidden="true"
-                className="absolute left-[2.5px] h-6 w-1.5 rounded-full bg-[var(--accent)]"
-                style={{ boxShadow: "0 0 12px 2px var(--accent)" }}
-                animate={{ top: ["0%", "94%"] }}
-                transition={{
-                  duration: 4.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-            ) : null}
             <ul className="space-y-5">
               {FLOW_STEPS.map((step, i) => (
                 <motion.li
@@ -189,14 +177,16 @@ export function Hero() {
                 >
                   <span
                     aria-hidden="true"
-                    className="absolute -left-6 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-[var(--background)] bg-[var(--text-muted)]"
+                    className="flow-dot absolute -left-7 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-[var(--background)]"
+                    style={{
+                      background: brandColor(i),
+                      ["--dot" as string]: brandColor(i),
+                      animationDelay: `${i}s`,
+                    }}
                   />
                   <span
-                    className={`text-sm ${
-                      i === FLOW_STEPS.length - 1
-                        ? "font-semibold text-[var(--text-primary)]"
-                        : "text-[var(--text-secondary)]"
-                    }`}
+                    className="flow-text text-base font-semibold text-[var(--text-primary)]"
+                    style={{ animationDelay: `${i}s` }}
                   >
                     {step}
                   </span>

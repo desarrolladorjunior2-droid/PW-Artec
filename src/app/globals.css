@@ -350,6 +350,25 @@
   to { background-size: 100% 3px; }
 }
 
+.flow-text {
+  display: inline-block;
+  animation: flow-text 7s ease-in-out infinite;
+}
+
+.flow-dot {
+  animation: flow-dot 7s ease-in-out infinite;
+}
+
+@keyframes flow-text {
+  0%, 16%, 100% { opacity: 0.9; transform: translateX(0); }
+  6%, 10% { opacity: 1; transform: translateX(8px); }
+}
+
+@keyframes flow-dot {
+  0%, 16%, 100% { scale: 1; box-shadow: 0 0 0 0 transparent; }
+  6%, 10% { scale: 1.45; box-shadow: 0 0 14px 4px color-mix(in srgb, var(--dot) 70%, transparent); }
+}
+
 .gallery-track {
   animation: gallery-scroll 70s linear infinite;
 }
