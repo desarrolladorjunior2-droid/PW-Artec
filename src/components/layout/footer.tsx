@@ -5,7 +5,7 @@ import { SectionMotion } from "@/components/ui/section-motion";
 
 export function Footer() {
   return (
-    <footer style={sectionTint("var(--brand-indigo)")} className="section-tinted relative overflow-hidden bg-[var(--surface-glass)] backdrop-blur-xl">
+    <footer style={sectionTint("var(--brand-indigo)")} className="section-tinted relative overflow-hidden section-overlap bg-[var(--surface-glass)] backdrop-blur-xl">
       <SectionMotion tint="var(--brand-indigo)" seed={2} strong />
       <div className="container-artec relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">

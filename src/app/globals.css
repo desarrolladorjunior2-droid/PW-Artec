@@ -335,6 +335,24 @@
   100% { transform: translate(-14px, -640px); opacity: 0; }
 }
 
+/* Pulls a section up slightly over the previous one's bottom edge and fades
+   its own top in over that overlap, so the two sections' REAL rendered
+   colors cross-fade into each other — never a hard rule, never a patch of
+   raw video standing in for either side. */
+.section-overlap {
+  margin-top: -1.5rem;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 1.5rem);
+  mask-image: linear-gradient(to bottom, transparent, black 1.5rem);
+}
+
+@media (min-width: 768px) {
+  .section-overlap {
+    margin-top: -2rem;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 2rem);
+    mask-image: linear-gradient(to bottom, transparent, black 2rem);
+  }
+}
+
 .hero-hl {
   background-image: linear-gradient(90deg, var(--brand-blue), var(--brand-indigo), var(--brand-orange));
   background-repeat: no-repeat;

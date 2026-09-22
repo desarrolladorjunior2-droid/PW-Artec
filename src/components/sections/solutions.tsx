@@ -14,7 +14,7 @@ export function Solutions() {
   return (
     <section style={sectionTint("var(--tint-solutions)")}
       id="solutions"
-      className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden section-overlap bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionVideo name="solutions" tint="var(--tint-solutions)" />
       <div className="container-artec relative">

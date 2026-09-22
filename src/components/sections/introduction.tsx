@@ -8,7 +8,7 @@ export function Introduction() {
   return (
     <section style={sectionTint("var(--tint-intro)")}
       aria-labelledby="introduction-heading"
-      className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden section-overlap bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionMotion tint="var(--tint-intro)" seed={0} />
       <div className="container-artec relative grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
