@@ -8,7 +8,7 @@ export function CaseStudy() {
     <section style={sectionTint("var(--brand-red)")}
       id="case-study"
       aria-labelledby="case-study-heading"
-      className="section-tinted relative overflow-hidden section-edge-fade-top bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionMotion tint="var(--brand-red)" seed={3} />
       <div className="container-artec relative">

@@ -62,7 +62,7 @@ export function Gallery() {
     <section
       aria-label="Galería de imágenes"
       style={sectionTint("var(--brand-indigo)")}
-      className="section-tinted relative overflow-hidden section-edge-fade bg-[var(--background-glass)] py-14 md:py-20"
+      className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-14 md:py-20"
     >
       <SectionMotion tint="var(--brand-indigo)" seed={4} strong />
       <div className="relative overflow-hidden motion-reduce:overflow-x-auto">

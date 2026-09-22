@@ -8,7 +8,7 @@ export function Capabilities() {
   return (
     <section style={sectionTint("var(--brand-indigo)")}
       id="capabilities"
-      className="section-tinted relative overflow-hidden section-edge-fade-top bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionMotion tint="var(--brand-indigo)" seed={2} />
       <div className="container-artec relative">

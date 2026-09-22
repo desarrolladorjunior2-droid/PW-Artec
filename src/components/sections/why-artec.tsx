@@ -6,7 +6,7 @@ import { SectionMotion } from "@/components/ui/section-motion";
 
 export function WhyArtec() {
   return (
-    <section style={sectionTint("var(--brand-blue)")} className="section-tinted relative overflow-hidden section-edge-fade-top bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
+    <section style={sectionTint("var(--brand-blue)")} className="section-tinted relative overflow-hidden bg-[var(--background-glass)] py-24 backdrop-blur-xl md:py-32">
       <SectionMotion tint="var(--brand-blue)" seed={4} />
       <div className="container-artec relative">
         <SectionHeading

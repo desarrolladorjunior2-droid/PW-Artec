@@ -11,6 +11,7 @@ import { CaseStudy } from "@/components/sections/case-study";
 import { WhyArtec } from "@/components/sections/why-artec";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
+import { SectionSeam } from "@/components/ui/section-seam";
 
 export default function Home() {
   return (
@@ -18,17 +19,28 @@ export default function Home() {
       <Navbar />
       <main id="main" className="flex-1">
         <Hero />
+        <SectionSeam from="var(--accent)" to="var(--brand-blue)" />
         <Metrics />
+        <SectionSeam from="var(--brand-blue)" to="var(--tint-intro)" />
         <Introduction />
+        <SectionSeam from="var(--tint-intro)" to="var(--tint-solutions)" />
         <Solutions />
+        <SectionSeam from="var(--tint-solutions)" to="var(--brand-green)" />
         <Ecosystem360 />
+        <SectionSeam from="var(--brand-green)" to="var(--brand-indigo)" />
         <Gallery />
+        <SectionSeam from="var(--brand-indigo)" to="var(--brand-indigo)" />
         <Capabilities />
+        <SectionSeam from="var(--brand-indigo)" to="var(--brand-red)" />
         <CaseStudy />
+        <SectionSeam from="var(--brand-red)" to="var(--brand-blue)" />
         <WhyArtec />
+        <SectionSeam from="var(--brand-blue)" to="var(--brand-green)" />
         <About />
+        <SectionSeam from="var(--brand-green)" to="var(--brand-blue)" />
         <Contact />
       </main>
+      <SectionSeam from="var(--brand-blue)" to="var(--brand-indigo)" />
       <Footer />
     </>
   );
