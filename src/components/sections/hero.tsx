@@ -117,16 +117,10 @@ export function Hero() {
                   </motion.span>
                 ),
               );
-              return seg.hl ? (
-                <span
-                  key={si}
-                  className="hero-hl font-semibold"
-                  style={{ ["--hl-delay" as string]: `${1.1 + si * 0.25}s` }}
-                >
+              return (
+                <span key={si} className={seg.hl ? "font-semibold" : undefined}>
                   {nodes}
                 </span>
-              ) : (
-                <span key={si}>{nodes}</span>
               );
             })}
           </p>
@@ -155,7 +149,7 @@ export function Hero() {
           aria-label="Flujo del ecosistema ARTEC"
         >
           <p
-            className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[var(--text-primary)]"
+            className="font-mono text-sm font-bold uppercase tracking-[0.16em] text-[var(--text-primary)]"
             style={{
               textShadow:
                 "0 0 1px var(--background), 0 0 2px var(--background), 0 0 4px var(--background), 0 0 7px var(--background), 0 0 12px var(--background), 0 0 12px var(--background)",

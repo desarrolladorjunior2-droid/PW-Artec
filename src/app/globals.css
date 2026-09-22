@@ -353,21 +353,6 @@
   }
 }
 
-.hero-hl {
-  background-image: linear-gradient(90deg, var(--brand-blue), var(--brand-indigo), var(--brand-orange));
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 0% 3px;
-  padding-bottom: 2px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  animation: hl-draw 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--hl-delay, 1s) forwards;
-}
-
-@keyframes hl-draw {
-  to { background-size: 100% 3px; }
-}
-
 .flow-text {
   display: inline-block;
   animation: flow-text 7s ease-in-out infinite;
