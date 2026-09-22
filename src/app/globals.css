@@ -335,27 +335,29 @@
   100% { transform: translate(-14px, -640px); opacity: 0; }
 }
 
-/* Replaces hard 1px section borders: fades each section's top/bottom edge
-   toward transparent so it dissolves into the shared fixed video instead of
-   banging into a colored rule against the next section's own background. */
+/* Replaces hard 1px section borders: softens each section's top/bottom edge
+   instead of a sharp rule. Never drops to fully transparent — that would
+   reveal the raw, un-tinted video underneath (which can be dark) as a harsh
+   band. It only dips to a dimmer share of the section's own tinted color, so
+   the boundary keeps that section's palette and just eases into the next. */
 .section-edge-fade {
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 48px, black calc(100% - 48px), transparent);
-  mask-image: linear-gradient(to bottom, transparent, black 48px, black calc(100% - 48px), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), black 64px, black calc(100% - 64px), rgba(0, 0, 0, 0.4));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), black 64px, black calc(100% - 64px), rgba(0, 0, 0, 0.4));
 }
 
 .section-edge-fade-top {
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 48px);
-  mask-image: linear-gradient(to bottom, transparent, black 48px);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), black 64px);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), black 64px);
 }
 
 @media (max-width: 640px) {
   .section-edge-fade {
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 28px, black calc(100% - 28px), transparent);
-    mask-image: linear-gradient(to bottom, transparent, black 28px, black calc(100% - 28px), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), black 36px, black calc(100% - 36px), rgba(0, 0, 0, 0.45));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), black 36px, black calc(100% - 36px), rgba(0, 0, 0, 0.45));
   }
   .section-edge-fade-top {
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 28px);
-    mask-image: linear-gradient(to bottom, transparent, black 28px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), black 36px);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), black 36px);
   }
 }
 
