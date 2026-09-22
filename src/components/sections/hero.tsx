@@ -154,7 +154,13 @@ export function Hero() {
           style={{ textShadow: HALO }}
           aria-label="Flujo del ecosistema ARTEC"
         >
-          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-primary)]">
+          <p
+            className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[var(--text-primary)]"
+            style={{
+              textShadow:
+                "0 0 1px var(--background), 0 0 2px var(--background), 0 0 4px var(--background), 0 0 7px var(--background), 0 0 12px var(--background), 0 0 12px var(--background)",
+            }}
+          >
             El ecosistema
           </p>
           <div className="relative mt-6 pl-7">
