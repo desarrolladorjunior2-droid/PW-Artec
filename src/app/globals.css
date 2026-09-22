@@ -335,6 +335,30 @@
   100% { transform: translate(-14px, -640px); opacity: 0; }
 }
 
+/* Replaces hard 1px section borders: fades each section's top/bottom edge
+   toward transparent so it dissolves into the shared fixed video instead of
+   banging into a colored rule against the next section's own background. */
+.section-edge-fade {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 48px, black calc(100% - 48px), transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 48px, black calc(100% - 48px), transparent);
+}
+
+.section-edge-fade-top {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 48px);
+  mask-image: linear-gradient(to bottom, transparent, black 48px);
+}
+
+@media (max-width: 640px) {
+  .section-edge-fade {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 28px, black calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 28px, black calc(100% - 28px), transparent);
+  }
+  .section-edge-fade-top {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 28px);
+    mask-image: linear-gradient(to bottom, transparent, black 28px);
+  }
+}
+
 .hero-hl {
   background-image: linear-gradient(90deg, var(--brand-blue), var(--brand-indigo), var(--brand-orange));
   background-repeat: no-repeat;

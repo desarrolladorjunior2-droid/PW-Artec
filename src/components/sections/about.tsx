@@ -8,7 +8,7 @@ export function About() {
   return (
     <section style={sectionTint("var(--brand-green)")}
       id="about"
-      className="section-tinted relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
+      className="section-tinted relative overflow-hidden section-edge-fade-top bg-[var(--surface-glass)] py-24 backdrop-blur-xl md:py-32"
     >
       <SectionMotion tint="var(--brand-green)" seed={5} />
       <div className="container-artec relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">

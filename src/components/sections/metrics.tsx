@@ -14,7 +14,7 @@ export function Metrics() {
     <section style={sectionTint("var(--brand-blue)")}
       id="metrics"
       aria-label="Escala operativa de ARTEC"
-      className="section-tinted relative overflow-hidden border-y border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl"
+      className="section-tinted relative overflow-hidden section-edge-fade bg-[var(--surface-glass)] backdrop-blur-xl"
     >
       <SectionMotion tint="var(--brand-blue)" seed={1} strong />
       {!prefersReducedMotion ? (
